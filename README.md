@@ -13,7 +13,6 @@ Tasks to To:
 - SRS
     - Prototype/Scenario - Nathaniel
     - System Interface - Tessa
-    - 
 - Class Diagram
 - Use case Diagrams and Descriptions
 - Business Case - Tessa
@@ -21,6 +20,5 @@ Tasks to To:
 - Detailed Work Plan 
     - WBS Chart
     - Written Description
-    - 
 - Work Diaries
 - Group Meetings
