@@ -11,8 +11,16 @@ I will be updating this readMe when certain Tasks have been completed.
 Tasks to To:
 
 - SRS
+    - Prototype/Scenario - Nathaniel
+    - System Interface - Tessa
+    - 
 - Class Diagram
 - Use case Diagrams and Descriptions
-- Prototype/Scenario
-- Business Case
-- Risk Analysis
+- Business Case - Tessa
+- Risk Analysis (See rup_rsklst) - Everyone
+- Detailed Work Plan 
+    - WBS Chart
+    - Written Description
+    - 
+- Work Diaries
+- Group Meetings
