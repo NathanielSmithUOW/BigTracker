@@ -1,0 +1,2 @@
+This is where all other code goes, mainly the .cpp files with the code. 
+NOTE: We will try and include all event listeners (ie button Clicks) in their own cpp file, not in the .h file, so this will involve you moving the code that is automatically generated into its own cpp file. 
