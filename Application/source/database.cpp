@@ -96,14 +96,16 @@ User* getUserFromID(int id)
                      query.value(3).toString(),
                      query.value(4).toString(),
                      query.value(5).toString(),
-                     query.value(6).toChar(),
+                     query.value(6).toString(),
                      query.value(7).toInt(),
                      query.value(8).toString(),
-                     query.value(10).toString()
+                     query.value(11).toString()
                      );
 
                  u->setID(query.value(0).toInt());
                  u->setMemberSince(query.value(9).toDate());
+                 u->setLastLoggedIn(query.value(10).toDate());
+                 u->setStatus(query.value(12).toBool());
            return u;
     }
     return NULL;
@@ -126,13 +128,15 @@ User* getUserFromUsername(QVariant Username)
                       query.value(3).toString(),
                       query.value(4).toString(),
                       query.value(5).toString(),
-                      query.value(6).toChar(),
+                      query.value(6).toString(),
                       query.value(7).toInt(),
                       query.value(8).toString(),
-                      query.value(10).toString()
+                      query.value(11).toString()
                       );
                   u->setID(query.value(0).toInt());
                   u->setMemberSince(query.value(9).toDate());
+                  u->setLastLoggedIn(query.value(10).toDate());
+                  u->setStatus(query.value(12).toBool());
            return u;
     }
     return NULL;
@@ -155,13 +159,15 @@ User* getUserFromEmail(QVariant Email)
                       query.value(3).toString(),
                       query.value(4).toString(),
                       query.value(5).toString(),
-                      query.value(6).toChar(),
+                      query.value(6).toString(),
                       query.value(7).toInt(),
                       query.value(8).toString(),
-                      query.value(10).toString()
+                      query.value(11).toString()
                       );
                   u->setID(query.value(0).toInt());
                   u->setMemberSince(query.value(9).toDate());
+                  u->setLastLoggedIn(query.value(10).toDate());
+                  u->setStatus(query.value(12).toBool());
            return u;
     }
     return NULL;
@@ -303,4 +309,60 @@ bool updateBug(Bug& b)
         qCritical() << query.lastError().text();
     }
     return ok;
+}
+QList<QString> getNotifications(User &u, bool all)
+{
+    QList<QString> list;
+
+    QSqlQuery query;
+    if(all)
+    {
+         query.prepare("SELECT Notification FROM NOTIFICATIONS WHERE NOTIFICATIONS.UserID = ?");
+         query.addBindValue(u.getID());
+    }
+    else
+    {
+         query.prepare("SELECT Notification FROM NOTIFICATIONS WHERE NOTIFICATIONS.UserID = ? AND NOTIFICATIONS.Date > ?");
+         query.addBindValue(u.getID());
+         query.addBindValue(u.getLastLoggedIn());
+
+    }
+    query.exec();
+    while(query.next())
+    {
+       list.append(query.value(0).toString());
+    }
+    return list;
+}
+
+QList<QString> getSubscriptions(User &u)
+{
+    QList<QString> list;
+
+    QSqlQuery query;
+         query.prepare("SELECT BugID FROM SUBSCRIPTIONS WHERE SUBSCRIPTIONS.UserID = ?");
+         query.addBindValue(u.getID());
+
+    query.exec();
+    while(query.next())
+    {
+       list.append(query.value(0).toString());
+    }
+    return list;
+}
+
+QList<QString> getSubscribers(Bug &b)
+{
+    QList<QString> list;
+
+    QSqlQuery query;
+         query.prepare("SELECT UserID FROM SUBSCRIPTIONS WHERE SUBSCRIPTIONS.BugID = ?");
+         query.addBindValue(b.getID());
+
+    query.exec();
+    while(query.next())
+    {
+       list.append(query.value(0).toString());
+    }
+    return list;
 }

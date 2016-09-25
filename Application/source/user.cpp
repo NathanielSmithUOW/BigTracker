@@ -8,13 +8,13 @@ User::User()
     this->userName = "";
     this->emailAddress = "";
     this->password = "";
-    this->gender = ' ';
+    this->gender = "";
     this->reputation = 0;
     this->role = "";
     this->profilePicture = "";
     this->memberSince = QDate::currentDate();
 }
-User::User(QString firstName, QString lastName, QString userName, QString emailAddress, QString password, QChar gender, int reputation, QString role, QString profilePicture)
+User::User(QString firstName, QString lastName, QString userName, QString emailAddress, QString password, QString gender, int reputation, QString role, QString profilePicture)
 {
     this->ID = -1;
     this->firstName = firstName;
@@ -27,6 +27,8 @@ User::User(QString firstName, QString lastName, QString userName, QString emailA
     this->role = role;
     this->profilePicture = profilePicture;
     this->memberSince = QDate::currentDate();
+    this->lastLoggedIn = QDate::currentDate();
+    this->status = true;
 }
 int User::getID()
 {
@@ -61,7 +63,7 @@ QString User::getRole()
     return this->role;
 }
 
-QChar User::getGender()
+QString User::getGender()
 {
     return this->gender;
 }
@@ -75,9 +77,17 @@ QDate User::getMemberSince()
 {
     return this->memberSince;
 }
+QDate User::getLastLoggedIn()
+{
+    return this->lastLoggedIn;
+}
 QString User::getProfilePicture()
 {
     return this->profilePicture;
+}
+bool User::getStatus()
+{
+    return this->status;
 }
 
 void User::setFirstName(QString name)
@@ -102,6 +112,10 @@ void User::setRole(QString role)
 {
     this->role = role;
 }
+void User::setGender(QString gender)
+{
+    this->gender = gender;
+}
 
 void User::setReputation(int repuation)
 {
@@ -119,4 +133,12 @@ void User::setID(int id)
 void User::setMemberSince(QDate memberSince)
 {
     this->memberSince = memberSince;
+}
+void User::setLastLoggedIn(QDate lastLoggedIn)
+{
+    this->lastLoggedIn = lastLoggedIn;
+}
+void User::setStatus(bool status)
+{
+    this->status = status;
 }

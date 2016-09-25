@@ -8,6 +8,7 @@
 #include <string>
 #include <QDebug>
 #include <QMessageBox>
+#include <QGroupBox>
 #include "user.h"
 #include "bug.h"
 
@@ -50,6 +51,9 @@ Bug* getBugFromID(int);
 bool addNewBug(Bug&);
 bool updateBug(Bug&);
 
-QList<User> searchUser(QString, QList<QString>);
+QList<User> searchUser(QString, QGroupBox);
+QList<QString> getNotifications(User &, bool);
+QList<QString> getSubscriptions(User &u);
+QList<QString> getSubscribers(Bug &b);
 
 #endif // DATABASE_H
