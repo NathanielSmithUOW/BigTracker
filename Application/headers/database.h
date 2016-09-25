@@ -36,7 +36,7 @@
 */
 
 bool connectToDatabase();
-void closeDatabase(QSqlDatabase);
+void closeDatabase();
 bool checkLogin(QVariant, QVariant);
 bool checkUserExists(QVariant);
 
@@ -49,5 +49,7 @@ bool updateUser(User&);
 Bug* getBugFromID(int);
 bool addNewBug(Bug&);
 bool updateBug(Bug&);
+
+QList<User> searchUser(QString, QList<QString>);
 
 #endif // DATABASE_H

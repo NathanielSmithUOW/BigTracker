@@ -25,10 +25,10 @@ bool connectToDatabase()
 // Purpose: Closes connection to the database
 // Input: Void
 // Output: void
-void closeDatabase(QSqlDatabase db)
+void closeDatabase()
 {
-    db.close();
-    db.removeDatabase(QSqlDatabase::defaultConnection);
+   QSqlDatabase::database().close();
+   QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
 }
 // Check Login
 // Purpose: Checks user credentials against the Database, can use either email or username
