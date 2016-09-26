@@ -2,7 +2,7 @@
 USE BugTracker;
 
 DROP TABLE IF EXISTS USER;
-CREATE TABLE USER
+/* CREATE TABLE USER
 (
 	ID INT AUTO_INCREMENT PRIMARY KEY,
 	First_Name VARCHAR(20),
@@ -15,12 +15,27 @@ CREATE TABLE USER
 	Role VARCHAR(20),
 	MemberSince DATETIME DEFAULT CURRENT_TIMESTAMP,
 	ProfilePicture VARCHAR(50)
+); */
+CREATE TABLE USER
+(
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    First_Name VARCHAR(20),
+    Family_Name VARCHAR(20),
+    Username VARCHAR(30) UNIQUE,
+    Email_Address VARCHAR(50) UNIQUE,
+    Password CHAR(32),
+    Gender VARCHAR(2),
+    Reputation INT,
+    Role VARCHAR(20),
+    MemberSince DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ProfilePicture VARCHAR(50),
+    Status BOOLEAN
 );
 
 
-INSERT INTO USER (First_Name, Family_Name, Username, Email_Address, Password, Gender, Reputation, Role, MemberSince, ProfilePicture)
+INSERT INTO USER (First_Name, Family_Name, Username, Email_Address, Password, Gender, Reputation, Role, MemberSince, ProfilePicture,Status)
 VALUES
-('Nathaniel', 'Smith', 'njs109', 'njs109@uowmail.edu.au', 'mypass', 'M', 0, 'System Administrator', CURDATE(), "Blank");
+('Nathaniel', 'Smith', 'njs109', 'njs109@uowmail.edu.au', 'mypass', 'M', 0, 'System Administrator', CURDATE(), "Blank",TRUE);
 
 DROP TABLE IF EXISTS BUG;
 CREATE TABLE BUG
