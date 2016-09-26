@@ -13,6 +13,7 @@ User::User()
     this->role = "";
     this->profilePicture = "";
     this->memberSince = QDate::currentDate();
+    this->status = true;
 }
 User::User(QString firstName, QString lastName, QString userName, QString emailAddress, QString password, QString gender, int reputation, QString role, QString profilePicture)
 {
