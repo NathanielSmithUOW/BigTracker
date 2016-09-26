@@ -176,11 +176,32 @@ User* getUserFromEmail(QVariant Email)
 // Purpose: Adds user information to the database
 // Input: User Object
 // Output: bool True if successful
+// bool addNewUser(User &u)
+// {
+//     QSqlQuery query;
+//     query.prepare("INSERT INTO USER (First_Name, Family_Name, Username, Email_Address, Password, Gender, Reputation, Role, ProfilePicture)"
+//                   "VALUES (?,?,?,?,?,?,?,?,?)");
+//     query.addBindValue(u.getFirstName());
+//     query.addBindValue(u.getLastName());
+//     query.addBindValue(u.getUserName());
+//     query.addBindValue(u.getEmail());
+//     query.addBindValue(u.getPassword());
+//     query.addBindValue(u.getGender());
+//     query.addBindValue(u.getReputation());
+//     query.addBindValue(u.getRole());
+//     query.addBindValue(u.getProfilePicture());
+//     bool ok =  query.exec();
+//     if(!ok)
+//     {
+//         qCritical() << query.lastError().text();
+//     }
+//     return ok;
+// }
 bool addNewUser(User &u)
 {
     QSqlQuery query;
-    query.prepare("INSERT INTO USER (First_Name, Family_Name, Username, Email_Address, Password, Gender, Reputation, Role, ProfilePicture)"
-                  "VALUES (?,?,?,?,?,?,?,?,?)");
+    query.prepare("INSERT INTO USER (First_Name, Family_Name, Username, Email_Address, Password, Gender, Reputation, Role, MemberSince,ProfilePicture,Status)"
+                  "VALUES (?,?,?,?,?,?,?,?,?,?,?)");
     query.addBindValue(u.getFirstName());
     query.addBindValue(u.getLastName());
     query.addBindValue(u.getUserName());
@@ -189,7 +210,9 @@ bool addNewUser(User &u)
     query.addBindValue(u.getGender());
     query.addBindValue(u.getReputation());
     query.addBindValue(u.getRole());
+    query.addBindValue(u.getMemberSince());
     query.addBindValue(u.getProfilePicture());
+    query.addBindValue(u.getStatus());
     bool ok =  query.exec();
     if(!ok)
     {
