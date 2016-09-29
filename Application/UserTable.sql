@@ -28,6 +28,7 @@ CREATE TABLE USER
     Reputation INT,
     Role VARCHAR(20),
     MemberSince DATETIME DEFAULT CURRENT_TIMESTAMP,
+    LastLoggedIn DATETIME, 
     ProfilePicture VARCHAR(50),
     Status BOOLEAN
 );
