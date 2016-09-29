@@ -227,10 +227,11 @@ bool addNewUser(User &u)
 bool updateUser(User &u)
 {
     QSqlQuery query;
-    query.prepare("UPDATE USER SET First_Name = ?, Family_Name = ?, Email_Address = ?, Password = ?, Reputation = ?, Role = ?, ProfilePicture = ? WHERE ID = ?");
+    query.prepare("UPDATE USER SET First_Name = ?, Family_Name = ?, Email_Address = ?, Gender = ?, Password = ?, Reputation = ?, Role = ?, ProfilePicture = ? WHERE ID = ?");
     query.addBindValue(u.getFirstName());
     query.addBindValue(u.getLastName());
     query.addBindValue(u.getEmail());
+    query.addBindValue(u.getGender());
     query.addBindValue(u.getPassword());
     query.addBindValue(u.getReputation());
     query.addBindValue(u.getRole());
