@@ -54,6 +54,7 @@ bool updateBug(Bug&);
 QList<User> searchUser(QString, QGroupBox);
 QList<QString> getNotifications(User &, bool);
 QList<QString> getSubscriptions(User &u);
+bool deleteSubscriptions(int bugID);
 QList<QString> getSubscribers(Bug &b);
 
 #endif // DATABASE_H
