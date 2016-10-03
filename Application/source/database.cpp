@@ -377,6 +377,15 @@ QList<QString> getSubscriptions(User &u)
     return list;
 }
 
+bool deleteSubscriptions(int bugID)
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM SUBSCRIPTIONS WHERE SUBSCRIPTIONS.BugID = ?");
+    query.addBindValue(bugID);
+    bool ok = query.exec();
+    return ok;
+}
+
 QList<QString> getSubscribers(Bug &b)
 {
     QList<QString> list;
