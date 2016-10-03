@@ -370,7 +370,9 @@ QList<QString> getSubscriptions(User &u)
     query.exec();
     while(query.next())
     {
-       list.append(query.value(0).toString());
+       Bug *bug;
+       bug=getBugFromID(query.value(0).toInt());
+       list.append("Bug ID: " + query.value(0).toString() + " - " + bug->getTitle());
     }
     return list;
 }
