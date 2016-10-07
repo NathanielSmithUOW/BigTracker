@@ -29,6 +29,7 @@ void addBugController::addBug(Bug& b)
         msgBox.setText(b.getTitle() + " has been received, your bug ID number is " + b.getID() + " thank you");
 
          msgBox.exec();
+        data.closeDatabase();
     }
     }else{
         msgBox.setText("cannot connect to database");
