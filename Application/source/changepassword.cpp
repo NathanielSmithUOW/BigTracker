@@ -48,9 +48,9 @@ void ChangePassword::on_changePassword_savePushButton_clicked()
                 u->setPassword(newPassword);
                 if(updateUser(*u))
                 {
-                    hide();
-                    qDebug()<<"changed";
-                    //QMessageBox::about(this,"Change password","Your password changed successfully");
+                    //hide();
+                    //qDebug()<<"changed";
+                    QMessageBox::about(this,"Change password","Your password changed successfully");
                 }
             }
         }
