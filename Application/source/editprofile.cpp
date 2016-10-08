@@ -96,5 +96,4 @@ void Editprofile::on_editprofile_pwdPushButton_clicked()
 {
     changePWD = new ChangePassword (ID, this);
     changePWD->show();
-    hide();
 }
