@@ -38,8 +38,6 @@ void Register::on_register_registerPushButton_clicked()
 
     if(password==verifyPwd)
     {
-        QMessageBox::about(this,"Register","The new account created!");
-        //QSqlDatabase db;
         if(connectToDatabase())
         {
             if(checkUserExists(email))
@@ -56,11 +54,11 @@ void Register::on_register_registerPushButton_clicked()
                 newUser.setPassword(password);
                 if(addNewUser(newUser))
                 {
-                    qDebug()<<"Inserted";
+                    QMessageBox::about(this,"Register","The new account created!");
                 }
+                close();
             }
         }
-        close();
     }
     else
     {
