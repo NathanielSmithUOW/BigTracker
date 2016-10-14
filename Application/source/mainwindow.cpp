@@ -44,7 +44,6 @@ void MainWindow::on_logIn_loginPushButton_clicked()
 
 void MainWindow::on_logIn_registerPushButton_clicked()
 {
-    hide();
     newRegister = new Register (this);
     newRegister -> show();
 }
