@@ -14,7 +14,8 @@ AddBug::AddBug(QWidget *parent) : QMainWindow(parent),ui(new Ui::AddBug)
 AddBug::AddBug(QWidget *parent, User *u) : QMainWindow(parent),ui(new Ui::AddBug)
 {
     ui->setupUi(this);
-    user = u;
+    if(u != NULL)
+    user = getUserFromID(u->getID());
     ui->addBug_ExtraOptionsFrame->hide();
     //this->setFixedSize(880,300);
     loadLists();
@@ -118,10 +119,15 @@ void AddBug::on_addBug_SubmitButton_clicked()
         {
             msgBox.setText(newBug.getTitle() + " has been received, thank you");
             msgBox.exec();
+            QString message = "You added a bug to the system\n";
+            message += newBug.getTitle();
+            message += "\t At ";
+            message += QDate::currentDate().toString();
+            addNotificationToUser(*user, message);
+            user->setReputation(user->getReputation()+ ADDBUG_REP);
+            updateUser(*user);
         }
         this->close();
-       //MainWindow* parent = qobject_cast<MainWindow*>(this->parent());
-        //parent->on_main_SearchButton_clicked();
 }
 
 
@@ -141,7 +147,6 @@ void AddBug::on_addBug_OptionsButton_toggled(bool checked)
     }
 
 }
-
 
 //method to reset textedits on interface back to null
 void AddBug::reset(){

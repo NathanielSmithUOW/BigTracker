@@ -68,3 +68,8 @@ void Login::on_logIn_forgetpwdPushButton_clicked()
     forgetPassword = new ForgetPassword (this);
     forgetPassword -> show();
 }
+
+void Login::on_logIn_pwdLineEdit_returnPressed()
+{
+    on_logIn_loginPushButton_clicked();
+}

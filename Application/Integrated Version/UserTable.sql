@@ -9,8 +9,8 @@ DROP TABLE IF EXISTS BUG;
 DROP TABLE IF EXISTS PLATFORM;
 DROP TABLE IF EXISTS COMPONENT;
 DROP TABLE IF EXISTS APPLICATION;
-DROP TABLE IF EXISTS USER;
-
+#DROP TABLE IF EXISTS USER;
+/*
 CREATE TABLE USER
 (
 	ID INT AUTO_INCREMENT PRIMARY KEY,
@@ -27,6 +27,7 @@ CREATE TABLE USER
 	ProfilePicture VARCHAR(50),
     Status BOOLEAN DEFAULT TRUE
 );
+*/
 
 CREATE TABLE APPLICATION
 (
@@ -52,19 +53,19 @@ CREATE TABLE PLATFORM
 CREATE TABLE BUG
 (
 	ID INT AUTO_INCREMENT PRIMARY KEY,
-	Title VARCHAR(50) UNIQUE,
-	Status ENUM('NEW', 'VERIFIED', 'UNDER REVIEW', 'PATCH UPLOADED', 'FIXED', 'CLOSED'),
+	Title VARCHAR(100) UNIQUE,
+	Status ENUM('NEW', 'VERIFIED', 'UNDER REVIEW', 'PATCH UPLOADED', 'FIXED', 'RESOLVED'),
 	Application VARCHAR(30),
 	Version DOUBLE(4, 2),
-	Description VARCHAR(200),
+	Description VARCHAR(300),
 	Platform VARCHAR(30),
-	Component VARCHAR(30),
-	Priority ENUM('HIGH', 'MEDIUM','LOW'),
-	Severity ENUM('CRITICAL','MAJOR','MINOR'),	
+	Component VARCHAR(100),
+	Priority ENUM('High', 'Medium','Low'),
+	Severity ENUM('normal','critical','enhancement','trivial','major','minor','blocker'),	
 	Walkthrough TEXT,
 	AssignedTo VARCHAR(30) DEFAULT 'Unassigned',
 	IdentifiedBy VARCHAR(30),
-	DateSubmitted DATETIME DEFAULT CURRENT_TIMESTAMP,
+	DateSubmitted VARCHAR(50),
 	FOREIGN KEY (Application) REFERENCES APPLICATION(Name)  ON DELETE CASCADE,
     FOREIGN KEY (Platform) REFERENCES PLATFORM(Name)  ON DELETE CASCADE,
 	FOREIGN KEY (IdentifiedBy) REFERENCES USER(Username) ON DELETE CASCADE
@@ -89,10 +90,9 @@ CREATE TABLE COMMENT
 CREATE TABLE SUBSCRIPTION
 (
 	BugID INT,
-	UserID INT,
+	UserID VARCHAR(30),
     PRIMARY KEY (BugID, UserID),
-    FOREIGN KEY (BugID) REFERENCES BUG(ID),
-    FOREIGN KEY (UserID) REFERENCES USER(ID)
+    FOREIGN KEY (BugID) REFERENCES BUG(ID)
 );
 
 CREATE TABLE NOTIFICATION
@@ -106,15 +106,17 @@ CREATE TABLE NOTIFICATION
 CREATE TABLE ATTACHMENT
 (
 	BugID INT,
+    Attacher VARCHAR(100),
 	Path VARCHAR(100),
+    Submitted VARCHAR(20),
     FOREIGN KEY (BugID) REFERENCES BUG(ID)
 );
-
+/*
 INSERT INTO USER (First_Name, Family_Name, Username, Email_Address, Password, Gender, Reputation, Role, MemberSince, ProfilePicture)
 VALUES
-('Nathaniel', 'Smith', 'njs109', 'njs109@uowmail.edu.au', 'mypass', 'M', 0, 'System Administrator', CURDATE(), "Blank"),
+('Nathaniel', 'Smith', 'njs109', 'njs109@uowmail.edu.au', 'mypass', 'M', 0, 'System Administrator', CURDATE(), 'Blank'),
 ('Bob', 'Smith', 'bob109', 'bob@uowmail.edu.au', 'mypass', 'M', 0, 'Developer', CURDATE(), "Blank");
-
+*/
 INSERT INTO APPLICATION(Name, Version)
 VALUES
 ('Photoshop', 1.0),
@@ -125,32 +127,30 @@ VALUES
 ('Chrome', 11.1),
 ('Chrome', 11.2),
 ('Chrome', 11.5),
-('FireFox', 1.0),
-('FireFox', 1.1),
+('Firefox', 1.0),
+('Firefox', 1.1),
 ('MineCraft', 1.2);
 
 INSERT INTO COMPONENT(Application, Name)
 VALUE
 ('Photoshop', 'TaskBar'),
 ('Photoshop', 'MenuBar'),
-('FireFox', 'JMC_Tab');
+('Firefox', 'JMC_Tab');
 
 INSERT INTO PLATFORM(Name)
 VALUES
+('All'),
+('Linux'),
 ('Windows 7'),
 ('Windows Vista'),
 ('Windows XP'),
-('MAC OS'),
+('MAC OS X'),
+('Windows 8'),
 ('Windows 8.1'),
-('Windows 10');
-
-INSERT INTO BUG (Title, Status, Application, Version, Description, Priority, Severity, IdentifiedBy)
-VALUES
-('Bug10', 'NEW', 'Photoshop', 1.2, 'Description of the bug', 'HIGH', 'CRITICAL', 'njs109'),
-('Bug2', 'VERIFIED', 'Chrome', 11.2, 'Description of the bug','HIGH', 'MAJOR', 'njs109'),
-('Bug3', 'CLOSED', 'FireFox', 1.1, 'Description of the bug','LOW', 'MINOR', 'njs109'),
-('Bug4', 'NEW', 'MineCraft', 1.2, 'Description of the bug','HIGH', 'CRITICAL', 'njs109'),
-('Bug5', 'NEW', 'Photoshop', 1.2, 'Description of the bug', 'HIGH', 'CRITICAL', 'njs109');
+('Windows 10'),
+('FreeBSD'),
+('Gonk (Firefox OS)'),
+('Android');
 
 INSERT INTO NOTIFICATION(UserID, Notification)
 VALUES

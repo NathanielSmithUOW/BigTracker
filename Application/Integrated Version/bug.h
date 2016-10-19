@@ -19,7 +19,7 @@ class Bug
         QString walkthrough;
         QString assignedTo;
         QString identifiedBy;
-        QDate submitted;
+        QDateTime submitted;
 
     public:
         Bug();
@@ -37,14 +37,14 @@ class Bug
         QString getWalkthrough();
         QString getAssignedTo();
         QString getIdentifiedBy();
-        QDate getSubmitted();
+        QDateTime getSubmitted();
         void setStatus(QString);
         void setPriority(QString);
         void setSeverity(QString);
         void setAssignedTo(QString);
         void setHistory(QString);
         void setID(int);
-        void setSubmitted(QDate);
+        void setSubmitted(QDateTime);
 };
 
 #endif // BUG_H

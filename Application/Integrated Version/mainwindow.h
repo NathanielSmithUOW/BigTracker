@@ -3,12 +3,20 @@
 
 
 #include <QMainWindow>
+#include <QXmlStreamReader>
+#include <QXmlStreamReader>
+#include <iostream>
+#include <fstream>
+#include <time.h>
+#include <stdlib.h>
+#include <QPair>
 #include "bug.h"
 #include "user.h"
 #include "database.h"
 #include "viewbug.h"
 #include "addbug.h"
 #include "editprofile.h"
+#include "searchUser.h"
 
 namespace Ui {
 class MainWindow;
@@ -34,10 +42,9 @@ private slots:
     void on_main_filterStatusBox_activated(const QString &arg1);
     void on_main_filterApplicationBox_activated(const QString &arg1);
     void on_main_filterDeveloperBox_activated(const QString &arg1);
-
     void on_main_addBugButton_clicked();
-
     void on_main_editProfileButton_clicked();
+    void on_main_searchUsers_clicked();
 
 private:
     Ui::MainWindow *ui;

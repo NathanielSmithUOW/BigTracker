@@ -7,6 +7,7 @@
 QT       += core gui
 QT       += sql
 QT       += network
+QT       += xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,13 +20,14 @@ SOURCES += main.cpp\
         user.cpp \
         bug.cpp \
         mainwindow.cpp \
-    login.cpp \
-    changepassword.cpp \
-    forgetpassword.cpp \
-    register.cpp \
-    addbug.cpp \
-    viewbug.cpp \
-    editprofile.cpp
+        login.cpp \
+        changepassword.cpp \
+        forgetpassword.cpp \
+        register.cpp \
+        addbug.cpp \
+        viewbug.cpp \
+        editprofile.cpp \
+        searchUser.cpp
 
 HEADERS  += \
         database.h \
@@ -38,7 +40,8 @@ HEADERS  += \
         register.h \
         addbug.h \
         viewbug.h \
-        editprofile.h
+        editprofile.h \
+        searchUser.h
 
 FORMS    += \
     mainwindow.ui \
@@ -48,7 +51,8 @@ FORMS    += \
     register.ui \
     addbug.ui \
     viewbug.ui \
-    editprofile.ui
+    editprofile.ui \
+    searchUser.ui
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/'../../../../Program Files/MySQL/MySQL Server 5.7/lib/' -llibmysql
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/'../../../../Program Files/MySQL/MySQL Server 5.7/lib/' -llibmysqld
@@ -59,3 +63,11 @@ DEPENDPATH += $$PWD/'../../../../Program Files/MySQL/MySQL Server 5.7/include'
 
 RESOURCES += \
     resources.qrc
+
+SUBDIRS += \
+    ../../Desktop/qftp/qftp.pro
+
+DISTFILES += \
+    ReadMe.txt \
+    DropTable.sql \
+    UserTable.sql

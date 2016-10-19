@@ -46,15 +46,20 @@ void Register::on_register_registerPushButton_clicked()
             }
             else
             {
-                User newUser;
-                newUser.setFirstName(firstName);
-                newUser.setLastName(lastName);
-                newUser.setUserName(username);
-                newUser.setEmail(email);
-                newUser.setPassword(password);
-                if(addNewUser(newUser))
+                User *newUser = new User();
+                newUser->setFirstName(firstName);
+                newUser->setLastName(lastName);
+                newUser->setUserName(username);
+                newUser->setEmail(email);
+                newUser->setPassword(password);
+                newUser->setRole("Reporter");
+                if(addNewUser(*newUser))
                 {
                     qDebug()<<"Inserted";
+                    hide();
+                    main = new MainWindow(this, newUser);
+                    main->show();
+                    addNotificationToUser(*newUser, "Welcome to BugTracker");
                 }
             }
 
@@ -64,5 +69,4 @@ void Register::on_register_registerPushButton_clicked()
     {
         QMessageBox::warning(this,"Waring","The passwords are not matched.");
     }
-    closeDatabase();
 }

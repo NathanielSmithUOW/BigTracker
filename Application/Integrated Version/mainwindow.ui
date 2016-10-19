@@ -554,22 +554,6 @@
       </layout>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QLabel" name="main_RegisterLabel">
-      <property name="font">
-       <font>
-        <family>Arial</family>
-        <pointsize>24</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Logged in as Guest
-Please Register</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="2">
      <widget class="QToolButton" name="main_addBugButton">
       <property name="minimumSize">
@@ -607,6 +591,22 @@ Please Register</string>
       </property>
       <property name="toolButtonStyle">
        <enum>Qt::ToolButtonTextUnderIcon</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="main_RegisterLabel">
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>24</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Logged in as Guest
+Please Register</string>
       </property>
      </widget>
     </item>
@@ -716,5 +716,22 @@ Please Register</string>
  <resources>
   <include location="resources.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionSearch_Users</sender>
+   <signal>triggered()</signal>
+   <receiver>actionSearch_Users</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>599</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

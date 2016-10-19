@@ -298,7 +298,7 @@ Bug* getBugFromID(int id)
                      );
                  b->setID(query.value(0).toInt());
                  b->setAssignedTo(query.value(11).toString());
-                 b->setSubmitted(query.value(13).toDate());
+                 b->setSubmitted(QDateTime::fromString(query.value(13).toString(), "yyyy-MM-dd hh:mm:ss"));
            return b;
     }
     return NULL;
@@ -334,7 +334,7 @@ Bug* getBugFromTitle(QString title)
                       );
                   b->setID(query.value(0).toInt());
                   b->setAssignedTo(query.value(11).toString());
-                  b->setSubmitted(query.value(13).toDate());
+                 b->setSubmitted(QDateTime::fromString(query.value(13).toString(), "yyyy-MM-dd hh:mm:ss"));
             return b;
     }
     return NULL;
@@ -346,8 +346,8 @@ Bug* getBugFromTitle(QString title)
 bool addNewBug(Bug& b)
 {
     QSqlQuery query;
-    query.prepare("INSERT INTO BUG (Title, Status, Application, Version, Description, Platform, Component, Priority, Severity, Walkthrough, AssignedTo, IdentifiedBy)"
-                  "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+    query.prepare("INSERT INTO BUG (Title, Status, Application, Version, Description, Platform, Component, Priority, Severity, Walkthrough, AssignedTo, IdentifiedBy, DateSubmitted)"
+                  "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
     query.addBindValue(b.getTitle());
     query.addBindValue(b.getStatus());
     query.addBindValue(b.getApplication());
@@ -360,6 +360,7 @@ bool addNewBug(Bug& b)
     query.addBindValue(b.getWalkthrough());
     query.addBindValue(b.getAssignedTo());
     query.addBindValue(b.getIdentifiedBy());
+    query.addBindValue(b.getSubmitted());
     bool ok =  query.exec();
     if(!ok)
     {
@@ -429,7 +430,7 @@ QList<QString> getSubscriptions(User &u)
 
     QSqlQuery query;
          query.prepare("SELECT BugID FROM SUBSCRIPTION WHERE SUBSCRIPTION.UserID = ?");
-         query.addBindValue(u.getID());
+         query.addBindValue(u.getUserName());
 
      bool ok = query.exec();
      if(!ok)
@@ -450,7 +451,7 @@ bool deleteSubscriptions(Bug &b, User &u)
     QSqlQuery query;
     query.prepare("DELETE FROM SUBSCRIPTION WHERE SUBSCRIPTION.BugID = ? AND SUBSCRIPTION.UserID = ?");
     query.addBindValue(b.getID());
-    query.addBindValue(u.getID());
+    query.addBindValue(u.getUserName());
     bool ok = query.exec();
     if(!ok)
     {
@@ -474,7 +475,7 @@ QList<QString> getSubscribers(Bug &b)
      }
     while(query.next())
     {
-       list.append("ID: " + getUserFromID(query.value(0).toInt())->getUserName());
+       list.append("ID: " + query.value(0).toString());
     }
     return list;
 }
@@ -485,7 +486,23 @@ bool addSubscriber(Bug &b, User &u)
     query.prepare("INSERT INTO SUBSCRIPTION (BugID, UserID)"
                   "VALUES (?,?)");
     query.addBindValue(b.getID());
-    query.addBindValue(u.getID());
+    query.addBindValue(u.getUserName());
+
+    bool ok = query.exec();
+    if(!ok)
+    {
+        qCritical() << query.lastError().text();
+    }
+    return ok;
+}
+bool addSubscriber(QString bugID, QString userID)
+{
+
+    QSqlQuery query;
+    query.prepare("INSERT INTO SUBSCRIPTION (BugID, UserID)"
+                  "VALUES (?,?)");
+    query.addBindValue(getBugFromTitle(bugID)->getID());
+    query.addBindValue(userID);
 
     bool ok = query.exec();
     if(!ok)
@@ -534,7 +551,7 @@ QList<QString> getBugComments(Bug &b)
     QList<QString> list;
 
     QSqlQuery query;
-    query.prepare("SELECT UserID, Comment FROM COMMENT WHERE COMMENT.BugID = ?");
+    query.prepare("SELECT UserID, Submitted, Comment FROM COMMENT WHERE COMMENT.BugID = ?");
      query.addBindValue(b.getID());
 
      bool ok = query.exec();
@@ -547,7 +564,9 @@ QList<QString> getBugComments(Bug &b)
        // QString str = "ID: " + query.value(0).toString();
        User *u = getUserFromID(query.value(0).toInt());
        if(u != NULL)
-            list.append("User: " + u->getUserName() + " " + query.value(1).toString());
+       {
+            list.append("User: " + u->getUserName() + "\t" + query.value(1).toString() + "\n" + query.value(2).toString());
+       }
     }
     return list;
 }
@@ -560,6 +579,24 @@ bool addBugComment(Bug &b, User &u, QString comment)
     query.addBindValue(b.getID());
     query.addBindValue(u.getID());
     query.addBindValue(comment);
+
+    bool ok = query.exec();
+    if(!ok)
+    {
+        qCritical() << query.lastError().text();
+    }
+    return ok;
+}
+bool addBugComment(Bug &b, User &u, QString comment, QDateTime date)
+{
+
+    QSqlQuery query;
+    query.prepare("INSERT INTO COMMENT (BugID, UserID, Comment, Submitted)"
+                  "VALUES (?,?,?,?)");
+    query.addBindValue(b.getID());
+    query.addBindValue(u.getID());
+    query.addBindValue(comment);
+    query.addBindValue(date);
 
     bool ok = query.exec();
     if(!ok)
@@ -588,7 +625,7 @@ QList<QString> getAttachments(Bug &b)
     QList<QString> list;
 
     QSqlQuery query;
-         query.prepare("SELECT Path FROM ATTACHMENT WHERE ATTACHMENT.BugID = ?");
+         query.prepare("SELECT Path, Submitted, Attacher FROM ATTACHMENT WHERE ATTACHMENT.BugID = ?");
          query.addBindValue(b.getID());
 
      bool ok = query.exec();
@@ -598,17 +635,20 @@ QList<QString> getAttachments(Bug &b)
      }
     while(query.next())
     {
-       list.append(query.value(0).toString());
+       list.append(query.value(0).toString() + "|" + query.value(1).toString() + "|" + query.value(2).toString());
     }
     return list;
 }
-bool addAttachment(Bug &b, QString path)
+bool addAttachment(Bug &b, QString attacher, QString path, QDateTime submitted)
 {
     QSqlQuery query;
-    query.prepare("INSERT INTO ATTACHMENT (BugID, Path)"
-                  "VALUES (?,?)");
-    query.addBindValue(b.getTitle());
+    query.prepare("INSERT INTO ATTACHMENT (BugID, Attacher, Path, Submitted)"
+                  "VALUES (?,?,?,?)");
+    query.addBindValue(b.getID());
+    query.addBindValue(attacher);
     query.addBindValue(path);
+    query.addBindValue(submitted);
+
     bool ok =  query.exec();
     if(!ok)
     {
@@ -679,8 +719,66 @@ QList<Bug*> searchBug(QGroupBox* box, bool firstLoad)
                       );
                   b->setID(query.value(0).toInt());
                   b->setAssignedTo(query.value(11).toString());
-                  b->setSubmitted(query.value(13).toDate());
+                 b->setSubmitted(QDateTime::fromString(query.value(13).toString(), "yyyy-MM-dd hh:mm:ss"));
            list.append(b);
+    }
+    return list;
+}
+QList<User*> searchUsers(QGroupBox* box, bool loadAll)
+{
+    QList<User*> list;
+    QSqlQuery query;
+    User *u;
+
+    if(loadAll)
+    {
+        QString queryString = "SELECT * FROM USER";
+        query.prepare(queryString);
+    }
+    else
+    {
+        QString queryString = "SELECT * FROM USER WHERE USER.Username REGEXP :line";
+        QLineEdit *line = box->findChild<QLineEdit *>("searchUser_searchBarLine");
+
+        if(box->findChild<QCheckBox *>("searchUser_IDBox")->isChecked())
+        {
+            queryString += " OR USER.ID = :line";
+        }
+        if(box->findChild<QCheckBox *>("searchUser_EmailBox")->isChecked())
+        {
+            queryString += " OR USER.Email_Address REGEXP :line";
+        }
+        if(box->findChild<QCheckBox *>("searchUser_NameBox")->isChecked())
+        {
+            queryString += " OR USER.First_Name REGEXP :line";
+            queryString += " OR USER.Family_Name REGEXP :line";
+        }
+        query.prepare(queryString);
+        query.bindValue(":line", line->text());
+    }
+
+    bool ok = query.exec();
+    if(!ok)
+    {
+        qCritical() << query.lastError().text();
+    }
+    while(query.next())
+    {
+        u = new User( query.value(1).toString(),
+                      query.value(2).toString(),
+                      query.value(3).toString(),
+                      query.value(4).toString(),
+                      query.value(5).toString(),
+                      query.value(6).toString(),
+                      query.value(7).toInt(),
+                      query.value(8).toString(),
+                      query.value(11).toString()
+                      );
+                  u->setID(query.value(0).toInt());
+                  u->setMemberSince(query.value(9).toDate());
+                  u->setLastLoggedIn(query.value(10).toDate());
+                  u->setStatus(query.value(12).toBool());
+           list.append(u);
     }
     return list;
 }

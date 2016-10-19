@@ -35,7 +35,7 @@
          nb->setPriority("LOW");
         addNewBug(*nb);
 */
-const int LOAD_BUG_DAYS = 30;
+const int LOAD_BUG_DAYS = 3000;
 
 
 bool connectToDatabase();
@@ -55,7 +55,7 @@ Bug* getBugFromTitle(QString);
 bool addNewBug(Bug&);
 bool updateBug(Bug&);
 
-QList<User> searchUser(QGroupBox, bool);
+QList<User*> searchUsers(QGroupBox*, bool);
 QList<Bug*> searchBug(QGroupBox*, bool);
 
 QList<QString> getNotifications(User &, bool);
@@ -66,6 +66,7 @@ bool deleteSubscriptions(Bug &b, User &u);
 
 QList<QString> getSubscribers(Bug &b);
 bool addSubscriber(Bug &b, User &u);
+bool addSubscriber(QString, QString);
 bool deleteAllSubscribers(Bug &b);
 
 QList<QString> getBugHistory(Bug &b);
@@ -73,9 +74,10 @@ bool addBugHistory(Bug &b, QString);
 
 QList<QString> getBugComments(Bug &b);
 bool addBugComment(Bug &b, User &u, QString);
+bool addBugComment(Bug &b, User &u, QString, QDateTime);
 
 QList<QString> getAttachments(Bug &b);
-bool addAttachment(Bug &, QString);
+bool addAttachment(Bug &, QString, QString, QDateTime);
 
 QList<QString> getApplications();
 bool addApplication(QString, double);

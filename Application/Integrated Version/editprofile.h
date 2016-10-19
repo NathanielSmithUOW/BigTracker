@@ -5,6 +5,14 @@
 #include "database.h"
 #include "user.h"
 #include "changepassword.h"
+#include <QDebug>
+#include <QList>
+#include <QMessageBox>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QFileDialog>
+
 namespace Ui {
 class Editprofile;
 }
@@ -21,10 +29,9 @@ public:
 
 private slots:
     void on_editprofile_savePushButton_clicked();
-
     void on_editprofile_deletePushButton_clicked();
-
     void on_editprofile_pwdPushButton_clicked();
+    void on_editprofile_changeProfileButton_clicked();
 
 private:
     Ui::Editprofile *ui;

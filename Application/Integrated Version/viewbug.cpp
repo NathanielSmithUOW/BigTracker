@@ -24,8 +24,9 @@ ViewBug::ViewBug (QWidget *parent, Bug *b, User *u) : QMainWindow(parent), ui(ne
     user = u;
     ui->setupUi(this);
     ui->viewBug_middleGroupBox->hide();
-    ViewBug::setFixedHeight(500);
+    ViewBug::setFixedHeight(700);
     this->ui->viewBug_middleGroupBox->setFixedHeight(800);
+    this->ui->viewBug_CommentListArea->setStyleSheet( "QListWidget::item { border-bottom: 1px solid black; }QListWidget::item:selected {background-color: white; color: black}" );
     setBug();
     checkRole();
 }
@@ -39,7 +40,7 @@ void ViewBug::checkRole()
 {
     if(user != NULL)
     {
-        if(user->getRole() != "System Administrator" || user->getRole() != "Triager")
+        if(user->getRole() != "System Administrator" && user->getRole() != "Triager")
         {
             ui->viewBug_IDTextEdit->setReadOnly(true);
             ui->viewBug_StatusTextEdit->setReadOnly(true);
@@ -52,7 +53,8 @@ void ViewBug::checkRole()
             ui->viewBug_DescriptionTextArea->setReadOnly(true);
             ui->viewBug_PlatformTextEdit->setReadOnly(true);
             ui->viewBug_SeverityTextEdit->setReadOnly(true);
-            ui->viewBug_clearCCListButton->setEnabled(false);
+            ui->viewBug_clearCCListButton->hide();
+            ui->viewBug_saveButton->hide();
         }
     }
     else
@@ -68,9 +70,9 @@ void ViewBug::checkRole()
         ui->viewBug_DescriptionTextArea->setReadOnly(true);
         ui->viewBug_PlatformTextEdit->setReadOnly(true);
         ui->viewBug_SeverityTextEdit->setReadOnly(true);
-        ui->viewBug_clearCCListButton->setEnabled(false);
-        ui->viewBug_addToCCListButton->setEnabled(false);
-        ui->viewBug_addCommentButton->setEnabled(false);
+        ui->viewBug_clearCCListButton->hide();
+        ui->viewBug_addToCCListButton->hide();
+        ui->viewBug_addCommentButton->hide();
     }
 }
 
@@ -79,11 +81,11 @@ void ViewBug::on_viewBug_ViewMoreButton_toggled(bool checked)
 {
 if(checked){
     ui->viewBug_middleGroupBox->show();
-    ViewBug::setFixedHeight(1300);
+    ViewBug::setFixedHeight(1500);
 
 }else{
     ui->viewBug_middleGroupBox->hide();
-    ViewBug::setFixedHeight(500);
+    ViewBug::setFixedHeight(700);
 
 }
 }
@@ -100,16 +102,16 @@ void ViewBug::setBug(){
     ui->viewBug_StatusTextEdit->setText(bug->getStatus());
     ui->viewBug_ApplicationTextEdit->setText(bug->getApplication());
     ui->viewBug_VersionTextEdit_2->setText(QString::number(bug->getVersion()));
-    ui->viewBug_dateSubmittedTextEdit->setText(bug->getSubmitted().toString());
+    ui->viewBug_dateSubmittedTextEdit->setText(bug->getSubmitted().toString("yyyy-MM-dd hh:mm:ss"));
     ui->viewBug_AssignedToTextEdit->setText(bug->getAssignedTo());
     ui->viewBug_identifiedByTextEdit->setText(bug->getIdentifiedBy());
     ui->viewBug_PriorityTextEdit->setText(bug->getPriority());
     ui->viewBug_DescriptionTextArea->appendPlainText(bug->getDescription());
     ui->viewBug_PlatformTextEdit->setText(bug->getPlatform());
     ui->viewBug_SeverityTextEdit->setText(bug->getSeverity());
-   ui->viewBug_HistoryListArea->addItems(getBugHistory(*bug));
     ui->viewBug_CCListArea->addItems(getSubscribers(*bug));
      ui->viewBug_CommentListArea->addItems(getBugComments(*bug));
+     load_attachments();
 
 }
 
@@ -132,6 +134,33 @@ void ViewBug::on_viewBug_addCommentButton_clicked()
     if(!ui->viewBug_commentAddArea->toPlainText().isEmpty())
     {
         addBugComment(*bug, *user, ui->viewBug_commentAddArea->toPlainText());
-        ui->viewBug_CommentListArea->addItem(user->getUserName() + " " + ui->viewBug_commentAddArea->toPlainText());
+        ui->viewBug_CommentListArea->addItem(user->getUserName() + "\t" + QDate::currentDate().toString() + "\n" + ui->viewBug_commentAddArea->toPlainText());
     }
+    ui->viewBug_commentAddArea->clear();
+}
+
+void ViewBug::on_viewBug_cancelButton_clicked()
+{
+    this->close();
+}
+
+void ViewBug::on_viewBug_saveButton_clicked()
+{
+
+}
+void ViewBug::load_attachments()
+{
+    this->ui->viewBug_attachmentTable->clearContents();
+    this->ui->viewBug_attachmentTable->setRowCount(0);
+    QList<QString> list = getAttachments(*bug);
+    for(QString attachment : list)
+    {
+        QStringList array = attachment.split("|");
+        this->ui->viewBug_attachmentTable->insertRow(this->ui->viewBug_attachmentTable->rowCount());
+        this->ui->viewBug_attachmentTable->setItem(this->ui->viewBug_attachmentTable->rowCount() - 1, 0, new QTableWidgetItem(array.value(0)));
+        this->ui->viewBug_attachmentTable->setItem(this->ui->viewBug_attachmentTable->rowCount() - 1, 1, new QTableWidgetItem(array.value(1)));
+         this->ui->viewBug_attachmentTable->setItem(this->ui->viewBug_attachmentTable->rowCount() - 1, 2, new QTableWidgetItem(array.value(2)));
+    }
+    this->ui->viewBug_attachmentTable->repaint();
+
 }

@@ -5,6 +5,9 @@
 #include <QDate>
 #include <sstream>
 
+const int ADDBUG_REP = 1;
+const int VERIFYBUG_REP = 5;
+const int PATCHBUG_REP = 10;
 // EXAMPLE
 // addNewUser(User("Bob", "Brown", "Bobby", "bobby123@email.com", "bob123", "Male", 0, "Reporter", ""));
 class User

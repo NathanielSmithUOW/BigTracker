@@ -233,7 +233,22 @@ color:white;
          </item>
          <item>
           <property name="text">
-           <string>Neutral</string>
+           <string>Normal</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Enchancement</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Blocker</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Critical</string>
           </property>
          </item>
         </widget>
@@ -388,9 +403,6 @@ color:white;</string>
       <zorder>label_2</zorder>
       <zorder>addBug_versionCombo</zorder>
       <zorder>addBug_componentsCombo</zorder>
-      <zorder>groupBox</zorder>
-      <zorder>groupBox</zorder>
-      <zorder>groupBox</zorder>
      </widget>
     </item>
     <item row="5" column="1" alignment="Qt::AlignRight">

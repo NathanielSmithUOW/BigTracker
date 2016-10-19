@@ -2,22 +2,23 @@
 #include "ui_changepassword.h"
 #include <QMessageBox>
 
-ChangePassword::ChangePassword(const int id, QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::ChangePassword)
+ChangePassword::ChangePassword(QWidget *parent) :QDialog(parent), ui(new Ui::ChangePassword)
 {
     ui->setupUi(this);
     this->setWindowTitle("Change password");
-    User *u;
-    ID=id;
-    if(connectToDatabase())
-    {
-        u = getUserFromID(ID);
-        ui->changePassword_usernameDataLabel->setText(u->getUserName());
-    }
-    closeDatabase();
-}
 
+
+
+}
+ChangePassword::ChangePassword(QWidget *parent, User *u) :QDialog(parent), ui(new Ui::ChangePassword)
+{
+    ui->setupUi(this);
+    this->setWindowTitle("Change password");
+    user = u;
+    ui->changePassword_usernameDataLabel->setText(u->getUserName());
+
+
+}
 ChangePassword::~ChangePassword()
 {
     delete ui;
@@ -35,25 +36,22 @@ void ChangePassword::on_changePassword_savePushButton_clicked()
     }
     else
     {
-        User *u;
-        if(connectToDatabase())
+        if(oldPassword!=user->getPassword())
         {
-            u = getUserFromID(ID);
-            if(oldPassword!=u->getPassword())
+            QMessageBox::warning(this,"Waring","The password is wrong.");
+        }
+        else
+        {
+           user->setPassword(newPassword);
+            if(updateUser(*user))
             {
-                QMessageBox::warning(this,"Waring","The password is wrong.");
-            }
-            else
-            {
-                u->setPassword(newPassword);
-                if(updateUser(*u))
-                {
-                    hide();
-                    qDebug()<<"changed";
-                    //QMessageBox::about(this,"Change password","Your password changed successfully");
-                }
+
+                QMessageBox::about(this,"Change password","Your password changed successfully");
+                close();
+                QString message = "You changed your password at";
+                message += QDate::currentDate().toString();
+                addNotificationToUser(*user, message);
             }
         }
-        closeDatabase();
     }
 }

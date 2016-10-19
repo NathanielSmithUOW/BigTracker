@@ -31,11 +31,16 @@ private slots:
 
     void on_viewBug_addCommentButton_clicked();
 
+    void on_viewBug_cancelButton_clicked();
+
+    void on_viewBug_saveButton_clicked();
+
 private:
     Ui::ViewBug *ui;
     Bug *bug;
     User *user;
     void checkRole();
+    void load_attachments();
 
 
 };

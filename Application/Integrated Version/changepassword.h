@@ -14,7 +14,8 @@ class ChangePassword : public QDialog
     Q_OBJECT
 
 public:
-    explicit ChangePassword(const int id,QWidget *parent = 0);
+    explicit ChangePassword(QWidget *parent = 0);
+    ChangePassword::ChangePassword(QWidget *parent = 0, User *u = NULL);
     ~ChangePassword();
 
 private slots:
@@ -22,7 +23,7 @@ private slots:
 
 private:
     Ui::ChangePassword *ui;
-    int ID;
+    User *user;
 };
 
 #endif // CHANGEPASSWORD_H

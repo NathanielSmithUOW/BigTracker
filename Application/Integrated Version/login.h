@@ -30,6 +30,8 @@ private slots:
 
     void on_logIn_forgetpwdPushButton_clicked();
 
+    void on_logIn_pwdLineEdit_returnPressed();
+
 private:
     Ui::Login *ui;
     MainWindow *main;

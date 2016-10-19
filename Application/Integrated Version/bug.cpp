@@ -15,7 +15,7 @@ Bug::Bug()
     this->walkthrough = "";
     this->assignedTo = "";
     this->identifiedBy = "";
-    this->submitted = QDate::currentDate();
+    this->submitted = QDateTime::currentDateTime();
 }
 Bug::Bug(QString title, QString status, QString application, double version, QString description, QString platform, QString component, QString priority, QString severity, QString walkthrough, QString identifiedBy)
 {
@@ -32,7 +32,7 @@ Bug::Bug(QString title, QString status, QString application, double version, QSt
     this->walkthrough = walkthrough;
     this->assignedTo = nullptr;
     this->identifiedBy = identifiedBy;
-    this->submitted = QDate::currentDate();
+    this->submitted = QDateTime::currentDateTime();
 }
 int Bug::getID()
 {
@@ -87,7 +87,7 @@ QString Bug::getIdentifiedBy()
 {
     return this->identifiedBy;
 }
-QDate Bug::getSubmitted()
+QDateTime Bug::getSubmitted()
 {
     return submitted;
 }
@@ -111,7 +111,7 @@ void Bug::setID(int id)
 {
     this->ID = id;
 }
-void Bug::setSubmitted(QDate submitted)
+void Bug::setSubmitted(QDateTime submitted)
 {
     this->submitted = submitted;
 }
