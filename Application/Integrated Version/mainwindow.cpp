@@ -21,6 +21,8 @@ MainWindow::MainWindow(QWidget *parent, User *u) : ui(new Ui::MainWindow)
     this->ui->main_addBugButton->hide();
     this->ui->main_editProfileButton->hide();
 
+    ui->actionHelp->connect(ui->actionHelp, SIGNAL(triggered()), this, SLOT(doLoadBug()));
+
     loadMenus();
 }
 void MainWindow::doViewBug()
@@ -39,6 +41,187 @@ void MainWindow::doNewUser()
 {
 
 }
+void MainWindow::doLoadBug()
+{
+    struct comment
+    {
+        QString userID;
+        QDateTime dateSubmitted;
+        QString commentText;
+        comment(QString u, QDateTime d, QString c)
+        {
+            userID = u;
+            dateSubmitted = d;
+            commentText = c;
+        }
+
+    };
+
+    QFile *file = new QFile("C:/Users/njs10/Desktop/BugReports.xml");
+    if(!file->open(QIODevice::ReadOnly | QIODevice::Text)){
+    qDebug() << "Error opening";
+    return;
+    }
+    QXmlStreamReader xml(file);
+
+    //we’re going to loop over the entire xml document
+    //using QXmlStreamReader’s atEnd() method, in addition to
+    //its hasError() method
+    xml.readNext();
+    int count = 0;
+    QStringList ccList;
+    QList<comment> commentList;
+    QList<comment> attachmentList;
+
+    QList<QPair<QString,QStringList> > ccBigList;
+    QList<QPair<QString, QList<comment> > > commentBigList;
+    QList<QPair<QString, QList<comment> > > attachmentBigList;
+    while(!xml.atEnd() && !xml.hasError())
+    {
+
+            QXmlStreamReader::TokenType token = xml.readNext();
+        QString id, title, desc, product, comp, platform, status, severity, priority, username, dev;
+
+        QDateTime date, commentDate;
+
+            if(token == QXmlStreamReader::StartDocument)
+            {
+            continue;
+            }
+            //what we’re looking for is that start of a valid element
+            if(token == QXmlStreamReader::StartElement)
+            {
+                if(xml.name() == "bug")
+                {
+                    xml.readNext();
+                    while(xml.name() != "bug")
+                    {
+                        if(xml.name() == "short_desc")
+                            desc = xml.readElementText();
+
+                        if(xml.name() == "bug_id")
+                            id = xml.readElementText();
+
+                       if(xml.name() == "product")
+                             product = xml.readElementText();
+
+                        if(xml.name() == "component")
+                            comp = xml.readElementText();
+
+                        if(xml.name() == "op_sys")
+                             platform = xml.readElementText();
+
+                        if(xml.name() == "bug_status")
+                             status = xml.readElementText();
+
+                        if(xml.name() == "bug_severity")
+                            severity = xml.readElementText();
+
+                        if(xml.name() == "priority")
+                        {
+                            priority;
+                            QString str= xml.readElementText();
+                            if(str == "--" || str == "P1")
+                                priority = "LOW";
+                            else if(str == "P2" || str == "P3")
+                                priority = "MEDIUM";
+                            else
+                                priority = "HIGH";
+
+                        }
+                        if(xml.name() == "cc")
+                           ccList.append(xml.readElementText());
+
+                        if(xml.name() == "reporter")
+                            username = xml.readElementText();
+
+
+                        if(xml.name() == "assigned_to")
+                            dev = xml.readElementText();
+
+                        if(xml.name() == "creation_ts")
+                        {
+                            QStringList dateList = xml.readElementText().split(' ');
+                            date = QDateTime::fromString((dateList.value(0) + " " + dateList.value(1)), "yyyy-MM-dd hh:mm:ss");
+                        }
+
+                        if(xml.name() == "long_desc")
+                        {
+                            QString username, commentText;
+                            QDateTime commentDate;
+                            xml.readNext();
+                            while(xml.name() != "long_desc")
+                            {
+                                if(xml.name() == "bug_when")
+                                {
+                                    QStringList dateList = xml.readElementText().split(' ');
+                                    commentDate = QDateTime::fromString((dateList.value(0) + " " + dateList.value(1)), "yyyy-MM-dd hh:mm:ss");
+                                }
+                               if(xml.name() == "who")
+                                   username = xml.readElementText();
+
+                               if(xml.name() == "thetext")
+                                   commentText = xml.readElementText();
+
+
+                               xml.readNext();
+                            }
+                            commentList.append(comment(username, commentDate, commentText));
+                        }
+                        if(xml.name() == "attachment")
+                        {
+                            QString attacher, path;
+                            QDateTime attachmentDate;
+                            xml.readNext();
+                            while(xml.name() != "attachment")
+                            {
+                                if(xml.name() == "date")
+                                {
+                                    QStringList dateList = xml.readElementText().split(' ');
+                                    attachmentDate = QDateTime::fromString((dateList.value(0) + " " + dateList.value(1)), "yyyy-MM-dd hh:mm:ss");
+                                }
+                               if(xml.name() == "attacher")
+                                   attacher = xml.readElementText();
+
+                               if(xml.name() == "filename")
+                                   path = xml.readElementText();
+
+
+                               xml.readNext();
+                            }
+                           attachmentList.append(comment(attacher, attachmentDate, path));
+                        }
+                        xml.readNext();
+
+                    }
+
+
+                    //srand(time(NULL));
+                   title = product + "_" + id;
+                   Bug b(title, status, product, 1.0, desc, platform, comp, priority, severity, " ", username);
+                    b.setAssignedTo(dev);
+                    b.setSubmitted(date);
+
+                    //b.setID(id.toInt());
+                    if(addNewBug(b))
+                    {
+
+
+
+                        qDebug() << count;
+                       //ccList.clear();
+                       count++;
+                    }
+            }
+
+       }
+    }
+    if(xml.hasError())
+      {
+          qDebug() << xml.errorString();
+      }
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -81,7 +264,7 @@ void MainWindow::loadMenus()
         ui->main_menuNew->connect(NewBugAction, SIGNAL(triggered()), this, SLOT(on_main_addBugButton_clicked()));
         this->ui->actionEdit_Profile->connect(this->ui->actionEdit_Profile, SIGNAL(triggered()), this, SLOT(on_main_editProfileButton_clicked()));
 
-        if(user->getRole() == "System Administrator")
+        if(user->getRole() == "System Administrator" || user->getRole() == "Triager")
         {
             QAction* EditBugAction = new QAction("Edit Bug");
             ui->main_bugTable->addAction(EditBugAction);
@@ -203,6 +386,7 @@ void MainWindow::on_main_searchUsers_clicked()
 {
     searchUser *searchProfile = new searchUser(this, user);
     searchProfile->show();
+
 }
 /*
 std::ifstream fin;

@@ -43,7 +43,7 @@ void AddBug::on_addBug_uploadFileButton_clicked()
         dialog.setFileMode(QFileDialog::ExistingFile);
         dialog.setWindowTitle("Open File");
 
-    QString directory = dialog.getOpenFileName(this, tr("Open File"),tr("Image Files (*.png *.xpm *.jpg);;Text files (*.txt);;XML files (*.xml);; csv files (*csv)"));
+    QString directory = dialog.getOpenFileName(this, tr("Open File"),tr("All files (*)"));
 
 
 
@@ -126,6 +126,11 @@ void AddBug::on_addBug_SubmitButton_clicked()
             addNotificationToUser(*user, message);
             user->setReputation(user->getReputation()+ ADDBUG_REP);
             updateUser(*user);
+            for(int i = 0;i < ui->addBug_fileUploadCombo->count();i++)
+            {
+               addAttachment(newBug,user->getUserName(), ui->addBug_fileUploadCombo->itemText(i), QDateTime::currentDateTime());
+            }
+
         }
         this->close();
 }

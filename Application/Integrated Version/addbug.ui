@@ -218,9 +218,22 @@ color:white;
     </item>
     <item row="3" column="0" colspan="3">
      <widget class="QGroupBox" name="addBug_ExtraOptionsFrame">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="4" column="1" colspan="2">
         <widget class="QComboBox" name="addBug_SeverityCombo_2">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
          <item>
           <property name="text">
            <string>Minor</string>
@@ -253,6 +266,13 @@ color:white;
          </item>
         </widget>
        </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="addBug_VersionLabel">
+         <property name="text">
+          <string>Version</string>
+         </property>
+        </widget>
+       </item>
        <item row="6" column="0">
         <widget class="QLabel" name="addBug_FileUploadLabel">
          <property name="text">
@@ -262,6 +282,14 @@ color:white;
        </item>
        <item row="5" column="1" colspan="2">
         <widget class="QComboBox" name="addBug_PriorityCombo_2">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
          <item>
           <property name="text">
            <string>Low</string>
@@ -279,20 +307,15 @@ color:white;
          </item>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="addBug_VersionLabel">
-         <property name="text">
-          <string>Version</string>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="1" colspan="2">
-        <widget class="QComboBox" name="addBug_versionCombo"/>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="addBug_ComponentLabel">
-         <property name="text">
-          <string>Component</string>
+        <widget class="QComboBox" name="addBug_versionCombo">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
          </property>
         </widget>
        </item>
@@ -300,6 +323,13 @@ color:white;
         <widget class="QLabel" name="label">
          <property name="text">
           <string>Severity</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="addBug_ComponentLabel">
+         <property name="text">
+          <string>Component</string>
          </property>
         </widget>
        </item>
@@ -311,7 +341,16 @@ color:white;
         </widget>
        </item>
        <item row="2" column="1" colspan="2">
-        <widget class="QComboBox" name="addBug_PlatformCombo"/>
+        <widget class="QComboBox" name="addBug_PlatformCombo">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
        </item>
        <item row="5" column="0">
         <widget class="QLabel" name="label_2">
@@ -327,27 +366,33 @@ color:white;
          </property>
         </widget>
        </item>
-       <item row="7" column="0" colspan="3">
-        <widget class="QComboBox" name="addBug_fileUploadCombo"/>
-       </item>
-       <item row="3" column="1" colspan="2">
-        <widget class="QComboBox" name="addBug_componentsCombo"/>
-       </item>
        <item row="1" column="3" rowspan="5">
         <widget class="QTextEdit" name="addBug_WalkthroughTextEdti"/>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QComboBox" name="addBug_componentsCombo">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
        </item>
        <item row="8" column="2">
         <widget class="QPushButton" name="addBug_uploadFileButton">
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>20</height>
+           <height>40</height>
           </size>
          </property>
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>11</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -370,13 +415,13 @@ color:white;</string>
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>20</height>
+           <height>40</height>
           </size>
          </property>
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>11</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -385,6 +430,9 @@ color:white;</string>
           <string>Remove File</string>
          </property>
         </widget>
+       </item>
+       <item row="7" column="0" colspan="3">
+        <widget class="QComboBox" name="addBug_fileUploadCombo"/>
        </item>
       </layout>
       <zorder>addBug_WalkthroughTextEdti</zorder>

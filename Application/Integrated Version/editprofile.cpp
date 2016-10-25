@@ -223,6 +223,10 @@ void Editprofile::on_editprofile_savePushButton_clicked()
         {
             QMessageBox::about(this, "Edit profile","Edit successfully");
         }
+        else
+        {
+             QMessageBox::warning(this, "Edit Profile","Edit unsuccessfully");
+        }
         close();
 }
 

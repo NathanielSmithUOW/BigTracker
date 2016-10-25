@@ -35,6 +35,10 @@ private slots:
 
     void on_viewBug_saveButton_clicked();
 
+    void on_viewBug_VerifyPatchButton_clicked();
+
+    void on_viewBug_UploadFileButton_clicked();
+
 private:
     Ui::ViewBug *ui;
     Bug *bug;

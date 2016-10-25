@@ -37,6 +37,7 @@ private slots:
     void doViewBug();
     void doEditBug();
     void doNewUser();
+    void doLoadBug();
 
     void on_main_bugTable_doubleClicked(const QModelIndex &index);
     void on_main_filterStatusBox_activated(const QString &arg1);
