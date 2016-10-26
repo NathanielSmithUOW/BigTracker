@@ -29,6 +29,7 @@ void ChangePassword::on_changePassword_savePushButton_clicked()
     QString oldPassword = ui->changePassword_oldPwdLineEdit->text();
     QString newPassword = ui->changePassword_newPwdLineEdit->text();
     QString verifyPassword = ui->changePassword_verifyLineEdit->text();
+    QCryptographicHash* hash = new QCryptographicHash(QCryptographicHash::Sha256);
 
     if(newPassword!=verifyPassword)
     {
@@ -36,13 +37,16 @@ void ChangePassword::on_changePassword_savePushButton_clicked()
     }
     else
     {
-        if(oldPassword!=user->getPassword())
+
+        QByteArray oldPassHash = hash->hash(oldPassword.toLatin1(), QCryptographicHash::Sha256).toHex();
+        if(oldPassHash != user->getPassword())
         {
             QMessageBox::warning(this,"Waring","The password is wrong.");
         }
         else
         {
-           user->setPassword(newPassword);
+            QByteArray result = hash->hash(newPassword.toLatin1(), QCryptographicHash::Sha256).toHex();
+           user->setPassword(result);
             if(updateUser(*user))
             {
 
@@ -54,4 +58,5 @@ void ChangePassword::on_changePassword_savePushButton_clicked()
             }
         }
     }
+    hash->reset();
 }

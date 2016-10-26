@@ -2,7 +2,6 @@
 #include "ui_register.h"
 #include <QMessageBox>
 #include <QFile>
-#include <QTextStream>
 #include <QPluginLoader>
 
 
@@ -12,6 +11,22 @@ Register::Register(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Register");
+}
+Register::Register(QWidget *parent, bool addUser) :QDialog(parent),ui(new Ui::Register)
+{
+    ui->setupUi(this);
+    if(addUser)
+    {
+        this->setWindowTitle("Add New User");
+        ui->register_guestPushButton->hide();
+        ui->register_registerPushButton->setText("Add User");
+        ui->register_registerLabel->setText("Add User");
+    }
+    else
+    {
+        this->setWindowTitle("Register");
+
+    }
 }
 
 Register::~Register()
@@ -35,10 +50,15 @@ void Register::on_register_registerPushButton_clicked()
     QString username = ui->register_usernameLineEdit->text();
     QString password = ui->register_pwdLineEdit->text();
     QString verifyPwd = ui->register_verifypwdLineEdit->text();
-
+    QCryptographicHash* hash = new QCryptographicHash(QCryptographicHash::Sha256);
+    if(firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || password.isNull())
+    {
+        QMessageBox::warning(this, "New User","Error: 1 or more fields are Empty");
+        return;
+    }
     if(password==verifyPwd)
     {
-        QMessageBox::about(this,"Register","The new account created!");
+
 
             if(checkUserExists(email))
             {
@@ -51,7 +71,8 @@ void Register::on_register_registerPushButton_clicked()
                 newUser->setLastName(lastName);
                 newUser->setUserName(username);
                 newUser->setEmail(email);
-                newUser->setPassword(password);
+                QByteArray passHash = hash->hash(password.toLatin1(), QCryptographicHash::Sha256).toHex();
+                newUser->setPassword(passHash);
                 newUser->setRole("Reporter");
                 if(addNewUser(*newUser))
                 {
@@ -60,6 +81,7 @@ void Register::on_register_registerPushButton_clicked()
                     main = new MainWindow(this, newUser);
                     main->show();
                     addNotificationToUser(*newUser, "Welcome to BugTracker");
+                    QMessageBox::about(this,"Register","The new account created!");
                 }
             }
 
@@ -69,4 +91,5 @@ void Register::on_register_registerPushButton_clicked()
     {
         QMessageBox::warning(this,"Waring","The passwords are not matched.");
     }
+    hash->reset();
 }

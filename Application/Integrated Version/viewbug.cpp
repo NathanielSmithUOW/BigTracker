@@ -60,7 +60,7 @@ void ViewBug::checkRole()
         {
             ui->viewBug_VerifyPatchButton->hide();
            ui->viewBug_VerifySlider->hide();
-
+            ui->viewBug_verifyBox->hide();
         }
 
     }
@@ -84,6 +84,7 @@ void ViewBug::checkRole()
         ui->viewBug_UploadFileButton->hide();
         ui->viewBug_VerifyPatchButton->hide();
         ui->viewBug_VerifySlider->hide();
+        ui->viewBug_verifyBox->hide();
     }
 
 }
@@ -167,11 +168,13 @@ void ViewBug::on_viewBug_saveButton_clicked()
     if(updateBug(*bug))
     {
         QMessageBox::about(this, "Edit Bug","Edit successfully");
+        close();
     }
     else
     {
          QMessageBox::warning(this, "Edit Bug","Edit unsuccessfully");
     }
+
 }
 void ViewBug::load_attachments()
 {
@@ -218,6 +221,7 @@ void ViewBug::on_viewBug_VerifyPatchButton_clicked()
             addNotificationToUser(*user, message);
             user->setReputation(user->getReputation() + VERIFYBUG_REP);
             updateUser(*user);
+            QMessageBox::about(this, "Verify Bug","Patch has been verifed");
 
 
     }
@@ -236,7 +240,7 @@ void ViewBug::on_viewBug_UploadFileButton_clicked()
     dialog.setFileMode(QFileDialog::ExistingFile);
     dialog.setWindowTitle("Open File");
 
-        QString directory = dialog.getOpenFileName(this, tr("Open File"),tr("All files (*)"));
+        QString directory = dialog.getOpenFileName(this, tr("Open File"),tr(""));
 
         QFileInfo fi(directory);
 

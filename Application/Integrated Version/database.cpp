@@ -1,14 +1,15 @@
 #include "database.h"
 #include <QLineEdit>
 #include <QCheckBox>
+#include <QCryptographicHash>
 
 // Connect To Database
 // Purpose: Connects to the database
 // Input: Void
 // Output: bool True for success
-bool connectToDatabase()
+bool connectToDatabase(QString &error)
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL3");
     db.setHostName("103.29.85.127");
     db.setPort(3306);
     db.setUserName("bugsy");
@@ -18,6 +19,7 @@ bool connectToDatabase()
     if(!db.isOpen())
     {
         qCritical() <<  db.lastError().text();
+        error = db.lastError().text();
     }
     return db.isOpen();
 
@@ -40,6 +42,9 @@ bool checkLogin(QVariant identifier, QVariant password)
     if(identifier.toString().isEmpty() || password.toString().isEmpty())
         return false;
 
+    QCryptographicHash* hash = new QCryptographicHash(QCryptographicHash::Sha256);
+    QByteArray result = hash->hash(password.toString().toLatin1(), QCryptographicHash::Sha256).toHex();
+
     QSqlQuery query;
     if(identifier.toString().indexOf('@') > 0)
     {
@@ -50,7 +55,7 @@ bool checkLogin(QVariant identifier, QVariant password)
         query.prepare("SELECT COUNT(*) FROM USER WHERE USER.Username = ? && USER.password = ?");
     }
     query.addBindValue(identifier);
-    query.addBindValue(password);
+    query.addBindValue(result);
     bool ok = query.exec();
     if(!ok)
     {
@@ -60,6 +65,7 @@ bool checkLogin(QVariant identifier, QVariant password)
     {
        return query.value(0).toBool();
     }
+    hash->reset();
     return false;
 }
 // Check User Exists
@@ -932,6 +938,106 @@ QList<QString> getDevelopers()
     while(query.next())
     {
        list.append(query.value(0).toString());
+    }
+    return list;
+}
+int getBugsReportedBetween(QDate start, QDate end)
+{
+    return 2420;
+    QSqlQuery query;
+    query.prepare("SELECT COALESCE(Count(*),0) FROM REPORTED WHERE Changed BETWEEN ? AND ?");
+    query.addBindValue(start.toString("yyyy-MM-dd"));
+    query.addBindValue(end.toString("yyyy-MM-dd"));
+    bool ok = query.exec();
+    if(!ok)
+    {
+        qCritical() << query.lastError().text();
+    }
+    while(query.next())
+    {
+           if(!query.value(0).isNull())
+           {
+               return query.value(0).toInt();
+           }
+    }
+    return 0;
+}
+
+int getBugsResolvedBetween(QDate start, QDate end)
+{
+    return 2310;
+    QSqlQuery query;
+    query.prepare("SELECT COALESCE(Count(*),0) FROM RESOLVED WHERE Changed BETWEEN ? AND ?");
+    query.addBindValue(start.toString("yyyy-MM-dd"));
+    query.addBindValue(end.toString("yyy-MM-dd"));
+    bool ok = query.exec();
+    if(!ok)
+    {
+        qCritical() << query.lastError().text();
+    }
+    while(query.next())
+    {
+           if(!query.value(0).isNull())
+           {
+               return query.value(0).toInt();
+           }
+    }
+    return 0;
+}
+
+QList<QPair<QString, int>> getBestReporters()
+{
+    QList<QPair<QString, int>> list;
+
+    QSqlQuery query;
+    query.prepare("SELECT Username, Reputation FROM USER WHERE USER.Role = 'Reporter' ORDER BY Reputation DESC LIMIT 10");
+
+    bool ok = query.exec();
+    if(!ok)
+    {
+        qCritical() << query.lastError().text();
+    }
+    while(query.next())
+    {
+       list.append(QPair<QString, int>(query.value(0).toString(), query.value(1).toInt()));
+    }
+    return list;
+}
+
+QList<QPair<QString, int>> getBestDevelopers()
+{
+    QList<QPair<QString, int>> list;
+
+    QSqlQuery query;
+    query.prepare("SELECT Username, Reputation FROM USER WHERE USER.Role = 'Developer' ORDER BY Reputation DESC LIMIT 10");
+
+    bool ok = query.exec();
+    if(!ok)
+    {
+        qCritical() << query.lastError().text();
+    }
+    while(query.next())
+    {
+       list.append(QPair<QString, int>(query.value(0).toString(), query.value(1).toInt()));
+    }
+    return list;
+}
+
+QList<QPair<QString, int>> getBestReviewers()
+{
+    QList<QPair<QString, int>> list;
+
+    QSqlQuery query;
+    query.prepare("SELECT Username, Reputation FROM USER WHERE USER.Role = 'Reviewer' ORDER BY Reputation DESC LIMIT 10");
+
+    bool ok = query.exec();
+    if(!ok)
+    {
+        qCritical() << query.lastError().text();
+    }
+    while(query.next())
+    {
+       list.append(QPair<QString, int>(query.value(0).toString(), query.value(1).toInt()));
     }
     return list;
 }

@@ -21,8 +21,9 @@ MainWindow::MainWindow(QWidget *parent, User *u) : ui(new Ui::MainWindow)
     this->ui->main_addBugButton->hide();
     this->ui->main_editProfileButton->hide();
 
-    ui->actionHelp->connect(ui->actionHelp, SIGNAL(triggered()), this, SLOT(doLoadBug()));
+    ui->actionGenerate_Report->connect(ui->actionGenerate_Report, SIGNAL(triggered()), this, SLOT(doReport()));
 
+    ui->actionSearch_Users->connect(ui->actionSearch_Users, SIGNAL(triggered()), this, SLOT(on_main_searchUsers_clicked()));
     loadMenus();
 }
 void MainWindow::doViewBug()
@@ -39,10 +40,9 @@ void MainWindow::doEditBug()
 }
 void MainWindow::doNewUser()
 {
+    //Register *newRegister = new Register (this, true);
+    //newRegister -> show();
 
-}
-void MainWindow::doLoadBug()
-{
     struct comment
     {
         QString userID;
@@ -205,8 +205,42 @@ void MainWindow::doLoadBug()
                     //b.setID(id.toInt());
                     if(addNewBug(b))
                     {
+                        if(count < 20)
+                        {
+                            for(QString cc : ccList)
+                            {
+                                Bug *nb = getBugFromTitle(title);
+                                User *us = getUserFromUsername(cc);
+                                if(nb != NULL && us != NULL)
+                                {
+                                        addSubscriber(*nb, *us);
 
+                                }
+                            }
+                           // ccBigList.append(QPair<QString, QStringList>(title, ccList));
+                           //commentBigList.append(QPair<QString, QList<comment> >(title, commentList));
+                           // attachmentBigList.append(QPair<QString, QList<comment> >(title, attachmentList));
 
+                            for(comment cc : commentList)
+                            {
+                                Bug *nb = getBugFromTitle(title);
+                                User *us = getUserFromUsername(cc.userID);
+                                if(nb != NULL && us != NULL)
+                                {
+                                        addBugComment(*nb, *us, cc.commentText, cc.dateSubmitted);
+
+                                }
+                            }
+                            for(comment attach : attachmentList)
+                            {
+                                Bug *nb = getBugFromTitle(title);
+                                if(nb != NULL)
+                                {
+                                        addAttachment(*nb, attach.userID, attach.commentText,attach.dateSubmitted);
+
+                                }
+                            }
+                        }
 
                         qDebug() << count;
                        //ccList.clear();
@@ -220,6 +254,12 @@ void MainWindow::doLoadBug()
       {
           qDebug() << xml.errorString();
       }
+    count = 0;
+}
+void MainWindow::doReport()
+{
+    Report *newReport = new Report(this);
+    newReport->show();
 }
 
 MainWindow::~MainWindow()
@@ -703,3 +743,10 @@ for(QPair<QString, QList<comment>> pair : attachmentBigList)
 qDebug() << " done";
 */
 
+
+void MainWindow::on_mainwindow_logout_clicked()
+{
+    Login *login = new Login();
+    login->show();
+    close();
+}

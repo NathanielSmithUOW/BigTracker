@@ -109,8 +109,7 @@ void Editprofile::uploadProfilePicture()
     dialog.setFileMode(QFileDialog::ExistingFile);
     dialog.setWindowTitle("Open File");
 
-    QString directory = QFileDialog::getOpenFileName(this,
-            tr("Open Image"), "/home", tr("Image Files (*.png *.jpg *.bmp)"));
+    QString directory = QFileDialog::getOpenFileName(this,tr("Open Image"), tr(""));
 
 if(!directory.isEmpty())
 {

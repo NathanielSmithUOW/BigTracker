@@ -18,6 +18,7 @@ class Register : public QDialog
 
 public:
     explicit Register(QWidget *parent = 0);
+    Register(QWidget *parent = 0, bool addUser = false);
     ~Register();
 
 private slots:

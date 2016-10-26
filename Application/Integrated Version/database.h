@@ -38,7 +38,7 @@
 const int LOAD_BUG_DAYS = 3000;
 
 
-bool connectToDatabase();
+bool connectToDatabase(QString &);
 void closeDatabase();
 bool checkLogin(QVariant, QVariant);
 bool checkUserExists(QVariant);
@@ -90,7 +90,12 @@ QList<QString> getPlatforms();
 bool addPlatform(QString);
 
 QList<QString> getDevelopers();
-
+/// For report //////
+int getBugsReportedBetween(QDate, QDate);
+int getBugsResolvedBetween(QDate, QDate);
+QList<QPair<QString, int>> getBestReporters();
+QList<QPair<QString, int>> getBestDevelopers();
+QList<QPair<QString, int>> getBestReviewers();
 
 
 

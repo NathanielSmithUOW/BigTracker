@@ -15,6 +15,11 @@ public:
     explicit ForgetPassword(QWidget *parent = 0);
     ~ForgetPassword();
 
+private slots:
+    void on_forgotpassword_SubmitButton_clicked();
+
+    void on_forgotpassword_CancelButton_clicked();
+
 private:
     Ui::ForgetPassword *ui;
 };

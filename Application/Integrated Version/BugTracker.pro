@@ -13,7 +13,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = BugTracker
 TEMPLATE = app
-
+RC_FILE = bugtracker.rc
 
 SOURCES += main.cpp\
         database.cpp \
@@ -27,7 +27,8 @@ SOURCES += main.cpp\
         addbug.cpp \
         viewbug.cpp \
         editprofile.cpp \
-        searchUser.cpp
+        searchUser.cpp \
+    report.cpp
 
 HEADERS  += \
         database.h \
@@ -41,7 +42,8 @@ HEADERS  += \
         addbug.h \
         viewbug.h \
         editprofile.h \
-        searchUser.h
+        searchUser.h \
+    report.h
 
 FORMS    += \
     mainwindow.ui \
@@ -52,10 +54,11 @@ FORMS    += \
     addbug.ui \
     viewbug.ui \
     editprofile.ui \
-    searchUser.ui
+    searchUser.ui \
+    report.ui
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/'../../../../Program Files/MySQL/MySQL Server 5.7/lib/' -llibmysql
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/'../../../../Program Files/MySQL/MySQL Server 5.7/lib/' -llibmysqld
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/'../../../../Program Files/MySQL/MySQL Server 5.7/lib/' -llibmysql
 else:unix: LIBS += -L$$PWD/'../../../../Program Files/MySQL/MySQL Server 5.7/lib/' -llibmysql
 
 INCLUDEPATH += $$PWD/'../../../../Program Files/MySQL/MySQL Server 5.7/include'
@@ -71,3 +74,13 @@ DISTFILES += \
     ReadMe.txt \
     DropTable.sql \
     UserTable.sql
+
+CONFIG += static
+CONFIG += c++11
+static {
+
+    CONFIG += static
+    QTPLUGIN += qsqlmysql
+    DEFINES += STATIC
+    message("Static build.")
+}

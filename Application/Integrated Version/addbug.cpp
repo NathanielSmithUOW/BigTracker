@@ -95,10 +95,16 @@ void AddBug::on_addBug_cancelButton_clicked()
 //method talks to controller class to submit the data
 void AddBug::on_addBug_SubmitButton_clicked()
 {
+
         QString title = ui->addBug_titleLineEdit->text();
 
         QString application = ui->addBug_ApplicationQCombo->currentText();
         QString description=ui->addBug_DescriptionTextEdit->toPlainText();
+        if(title.isEmpty() && application.isEmpty() && description.isEmpty())
+        {
+            QMessageBox::warning(this, "Add Bug","Title, application or description is Blank, need them");
+            return;
+        }
         QString v = ui->addBug_versionCombo->currentText();
         double version = v.toDouble();
         QString platform=ui->addBug_PlatformCombo->currentText();

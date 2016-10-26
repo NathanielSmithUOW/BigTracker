@@ -18,6 +18,14 @@ Login::Login(QWidget *parent) :
      int h=ui->logIn_picLabel->height();
      ui->logIn_picLabel->setPixmap(picture.scaled(w,h,Qt::KeepAspectRatio));
 
+     QString error;
+     bool ok = connectToDatabase(error);
+     if(!ok)
+     {
+         QMessageBox::warning(this, "Error", error);
+         //return 0;
+     }
+
 }
 
 Login::~Login()
@@ -59,7 +67,7 @@ void Login::on_logIn_loginPushButton_clicked()
 void Login::on_logIn_registerPushButton_clicked()
 {
     hide();
-    newRegister = new Register (this);
+    newRegister = new Register (this, false);
     newRegister -> show();
 }
 
