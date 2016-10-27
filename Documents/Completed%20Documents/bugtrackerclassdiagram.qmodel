@@ -1,0 +1,2380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qmt>
+ <project>
+  <uid>{efee2bce-a662-4ed1-9be8-0b3ebb4deb8b}</uid>
+  <root-package>
+   <instance>
+    <MPackage>
+     <base-MObject>
+      <MObject>
+       <base-MElement>
+        <MElement>
+         <uid>{d4e29d56-7f93-4d23-a3d7-42b4b60cd1b5}</uid>
+        </MElement>
+       </base-MElement>
+       <name>BugTrackerClassDiagram</name>
+       <children>
+        <handles>
+         <handles>
+          <qlist>
+           <item>
+            <handle>
+             <uid>{f3504cc6-3929-45c0-8495-fb64f28715dc}</uid>
+             <target>
+              <instance type="MCanvasDiagram">
+               <MCanvasDiagram>
+                <base-MDiagram>
+                 <MDiagram>
+                  <base-MObject>
+                   <MObject>
+                    <base-MElement>
+                     <MElement>
+                      <uid>{f3504cc6-3929-45c0-8495-fb64f28715dc}</uid>
+                     </MElement>
+                    </base-MElement>
+                    <name>BugTrackerClassDiagram</name>
+                   </MObject>
+                  </base-MObject>
+                  <elements>
+                   <qlist>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{dfd55601-3dbe-417c-93a8-431ab14c6e8b}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{32467ca3-b7b5-439f-ac44-618a55323950}</object>
+                         <name>Database</name>
+                         <pos>x:985;y:565</pos>
+                         <rect>x:-175;y:-325;w:350;h:650</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;controller&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{8ed8c1c4-bcff-42a2-87f7-1c862f1d0d15}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{f4b139e5-4a19-4fd4-9a22-a2c117a11538}</object>
+                         <name>User</name>
+                         <pos>x:1345;y:220</pos>
+                         <rect>x:-95;y:-305;w:190;h:610</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;Entity&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{92f2b44e-db69-46c8-b4b1-54cefe6d08df}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{6c8bb54e-8aff-40ec-9def-f34ca556d806}</object>
+                         <name>Bug</name>
+                         <pos>x:1345;y:835</pos>
+                         <rect>x:-95;y:-280;w:190;h:560</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;Entity&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{03abef0c-fef1-46d3-8720-553dc55bd3ca}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{9507c711-fe39-44db-9cb7-b043cee1c3c3}</object>
+                         <name>Login</name>
+                         <pos>x:115;y:30</pos>
+                         <rect>x:-115;y:-110;w:230;h:220</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;boundary&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{d9c44be4-a072-4acf-8e7f-1f22e25a5952}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{27192ec6-2e23-45d1-9943-6401d8055835}</object>
+                         <name>ForgetPassword</name>
+                         <pos>x:100;y:840</pos>
+                         <rect>x:-140;y:-70;w:280;h:140</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;boundary&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{ad1a6e44-4d2b-413f-ae24-f449fc524961}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{cdbf9117-7a70-4237-85ff-8440442f921b}</object>
+                         <name>Register</name>
+                         <pos>x:105;y:210</pos>
+                         <rect>x:-115;y:-85;w:230;h:170</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;boundary&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{3b31bad3-209a-4923-a4e0-6f8f1b03f80c}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{6effd81d-530f-4b12-81ab-f37a86354a7c}</object>
+                         <name>EditProfile</name>
+                         <pos>x:535;y:780</pos>
+                         <rect>x:-120;y:-140;w:240;h:280</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;boundary&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{e39c7ce8-a305-4fed-8c6b-ab7ac185a14a}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{40c2b573-8b4d-4e84-a8d4-4d133ed7a846}</object>
+                         <name>ViewProfile</name>
+                         <pos>x:105;y:390</pos>
+                         <rect>x:-40;y:-30;w:80;h:60</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;boundary&gt;</namespace>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{0829d98a-423d-46f7-977b-a00c97f3671f}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{fea8cf44-4fa1-49fa-bf25-5848966dfdf3}</object>
+                         <name>SearchUser</name>
+                         <pos>x:100;y:465</pos>
+                         <rect>x:-165;y:-125;w:330;h:250</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;boundary&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{b36b94c0-d049-4695-9e36-a726f7f7f9f6}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{868238d1-4ecc-4dbe-83e4-521df6159e0b}</object>
+                         <name>ViewBug</name>
+                         <pos>x:90;y:605</pos>
+                         <rect>x:-130;y:-150;w:260;h:300</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;boundary&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{ee18925c-b2e9-48bc-b7ac-1bb009bd978d}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{79ff63e6-685b-455d-8ec0-fec30d582b75}</object>
+                         <name>AddBug</name>
+                         <pos>x:545;y:10</pos>
+                         <rect>x:-195;y:-95;w:390;h:190</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;boundary&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{a95653b0-7e1f-4099-98ac-527467b2165f}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{2c02a223-2778-466d-9afb-d2f87ae0b207}</object>
+                         <name>MainWindow</name>
+                         <pos>x:510;y:280</pos>
+                         <rect>x:-165;y:-160;w:330;h:320</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;boundary&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{b0a3783b-7d89-41be-afec-96a1af19169f}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{4702fcfa-0ded-4e8b-870c-afcdd0d15b87}</object>
+                         <name>Report</name>
+                         <pos>x:995;y:70</pos>
+                         <rect>x:-130;y:-110;w:260;h:220</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;boundary&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{edd18e43-e9c2-4d91-a619-e7b5808a6dc2}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{cc951ff4-8004-4fc7-86a8-4ec41609cb25}</object>
+                         <name>ChangePassword</name>
+                         <pos>x:495;y:525</pos>
+                         <rect>x:-140;y:-75;w:280;h:150</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>&lt;boundary&gt;</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                   </qlist>
+                  </elements>
+                  <last-modified>1477539710078</last-modified>
+                  <toolbarid>General</toolbarid>
+                 </MDiagram>
+                </base-MDiagram>
+               </MCanvasDiagram>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{32467ca3-b7b5-439f-ac44-618a55323950}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{32467ca3-b7b5-439f-ac44-618a55323950}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Database</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;controller&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{eba816b8-b9e4-45e1-b103-8b5e2ebe4aa3}</uid>
+                    <type>1</type>
+                    <declaration>+const int LOAD_BUG_DAYS</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{25ec6f9f-fd20-418c-b787-4f6ff58df490}</uid>
+                    <type>2</type>
+                    <declaration>+bool connectToDatabase(QString &amp;)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{583cc24f-64d6-486f-8b31-d66ccdf5246d}</uid>
+                    <type>2</type>
+                    <declaration>+void closeDatabase()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d334e8e2-12ed-4e99-90fa-342e74ec4aa8}</uid>
+                    <type>2</type>
+                    <declaration>+bool checkLogin(QVariant, QVariant)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{3fbd120b-25cf-4062-963d-558c1f6560fa}</uid>
+                    <type>2</type>
+                    <declaration>+bool checkUserExists(QVariant)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e26294fa-15a6-46c8-b33b-5513aa1e2c33}</uid>
+                    <type>2</type>
+                    <declaration>+User* getUserFromID(int)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{befcf54a-bf46-406a-a606-3d989022d269}</uid>
+                    <type>2</type>
+                    <declaration>+User* getUserFromUsername(QVariant)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{3f74bf04-1144-497f-990b-2bda22ae43f6}</uid>
+                    <type>2</type>
+                    <declaration>+User* getUserFromEmail(QVariant)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6fb98f8e-8567-4030-8757-fc230da58761}</uid>
+                    <type>2</type>
+                    <declaration>+bool addNewUser(User&amp;)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0ad0d7f2-7eba-4089-82b2-06526a71c7fa}</uid>
+                    <type>2</type>
+                    <declaration>+bool updateUser(User&amp;)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6c40b3ae-b08f-4234-8a26-4ec2d9c2127c}</uid>
+                    <type>2</type>
+                    <declaration>+Bug* getBugFromID(int)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{3212d796-e48f-43a1-a611-1501c9f82f0c}</uid>
+                    <type>2</type>
+                    <declaration>+Bug* getBugFromTitle(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{775e9b04-24e5-4319-a012-116a74198e36}</uid>
+                    <type>2</type>
+                    <declaration>+bool addNewBug(Bug&amp;)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{72c2b78f-c57d-4529-8371-4e29b15cf383}</uid>
+                    <type>2</type>
+                    <declaration>+bool updateBug(Bug&amp;)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6a251e9c-6a7a-42af-bf66-f4f28b78bfa0}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;User*&gt; searchUsers(QGroupBox*, bool)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{aef2662b-7bdc-4d73-a3ab-8e0308fd86ca}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;Bug*&gt; searchBug(QGroupBox*, bool)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{db175bce-b805-4725-bc24-4fa771e009a3}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QString&gt; getNotifications(User &amp;, bool)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{66a21f52-b930-4cb6-ab0f-cd760b0911c4}</uid>
+                    <type>2</type>
+                    <declaration>+bool addNotificationToUser(User &amp;,QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{9d211d0e-2bba-4282-8ec5-673ce2aa19e4}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QString&gt; getSubscriptions(User &amp;u)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4a80ef79-ef66-4a04-a1dc-6fc53417498b}</uid>
+                    <type>2</type>
+                    <declaration>+bool deleteSubscriptions(Bug &amp;b, User &amp;u)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7ae7ccff-a218-4bc1-8982-c79475e38e86}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QString&gt; getSubscribers(Bug &amp;b)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a3501437-60bd-48de-9654-8254af36f16a}</uid>
+                    <type>2</type>
+                    <declaration>+bool addSubscriber(Bug &amp;b, User &amp;u)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ca75fe76-d396-420d-b7e4-3e7e8c16e3a4}</uid>
+                    <type>2</type>
+                    <declaration>+bool addSubscriber(QString, QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ffce529c-0070-4461-a5f3-ecf0d28dd4c3}</uid>
+                    <type>2</type>
+                    <declaration>+bool deleteAllSubscribers(Bug &amp;b)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{5162b70d-7b8d-46e1-95c5-141f1f9c6c3d}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QString&gt; getBugHistory(Bug &amp;b)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0e083e00-68ed-4b84-ab2f-6c78c2644f8e}</uid>
+                    <type>2</type>
+                    <declaration>+bool addBugHistory(Bug &amp;b, QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b015bf86-5b33-43a6-a323-8fba0b5748c8}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QString&gt; getBugComments(Bug &amp;b)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{dced5088-e7d4-4330-a6a1-2205b27386c1}</uid>
+                    <type>2</type>
+                    <declaration>+bool addBugComment(Bug &amp;b, User &amp;u, QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6aa5de16-490b-44f7-98c9-ae6a5b19c156}</uid>
+                    <type>2</type>
+                    <declaration>+bool addBugComment(Bug &amp;b, User &amp;u, QString, QDateTime)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{54865775-0bfb-42c8-a2b8-5057c28d5929}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QString&gt; getAttachments(Bug &amp;b)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{84e616db-798b-4c50-bd5b-3993ba3875c9}</uid>
+                    <type>2</type>
+                    <declaration>+bool addAttachment(Bug &amp;, QString, QString, QDateTime)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e60d1b74-d24c-4824-ab1d-aa66320e0b46}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QString&gt; getApplications()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{04a812c5-9f45-4837-af22-33b68ced30b3}</uid>
+                    <type>2</type>
+                    <declaration>+bool addApplication(QString, double)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{42fcddac-4f87-4bd5-a98e-720c462ff9e6}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;double&gt; getVersions(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7569d98e-54ed-4da6-a24a-5fd457aafd2f}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QString&gt; getComponents(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b2df159d-d580-40f6-a1c5-da0a96f8a8c3}</uid>
+                    <type>2</type>
+                    <declaration>+bool addComponent(QString, QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d4b15683-92d7-44a9-bc9f-3f196f205f54}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QString&gt; getPlatforms()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{8e09862c-2c8a-45cd-aa74-5142d6fe04b8}</uid>
+                    <type>2</type>
+                    <declaration>+bool addPlatform(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0e422c92-fda5-4e17-8fbc-2b5f1aa44f18}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QString&gt; getDevelopers()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{73d96fa1-6cdf-4531-a047-bf6a32e03301}</uid>
+                    <type>2</type>
+                    <declaration>+int getBugsReportedBetween(QDate, QDate)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{23d9636b-46e9-408c-ad8a-3090db674598}</uid>
+                    <type>2</type>
+                    <declaration>+int getBugsResolvedBetween(QDate, QDate)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ab70897c-fa38-46a4-8242-301c2f789113}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QPair&lt;QString, int&gt;&gt; getBestReporters()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{39d69d1c-1d63-4dfc-93ad-9fff3cc1d79b}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QPair&lt;QString, int&gt;&gt; getBestDevelopers()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a9b6c013-b248-40c8-96b0-7d2375344ab6}</uid>
+                    <type>2</type>
+                    <declaration>+QList&lt;QPair&lt;QString, int&gt;&gt; getBestReviewers()</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{f4b139e5-4a19-4fd4-9a22-a2c117a11538}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{f4b139e5-4a19-4fd4-9a22-a2c117a11538}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>User</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;Entity&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{cd12492d-19e6-4b47-98a6-b49d620a9734}</uid>
+                    <type>1</type>
+                    <declaration>-int ID</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d62e8410-719e-48aa-9e28-f0d37e986b33}</uid>
+                    <type>1</type>
+                    <declaration>-QString firstName</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f58da77e-c1a4-4606-b0d0-767a0a47300c}</uid>
+                    <type>1</type>
+                    <declaration>-QString lastName</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e48ba386-4fb6-48aa-8147-10806c930500}</uid>
+                    <type>1</type>
+                    <declaration>-QString userName</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ac594752-b000-4d7e-ad1d-32a91da15fd2}</uid>
+                    <type>1</type>
+                    <declaration>-QString emailAddress</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{c834893b-b7fe-4651-bff0-6a1aecc78373}</uid>
+                    <type>1</type>
+                    <declaration>-QString password</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{1c40e33e-466b-4ec6-924e-9ac33a5c79a0}</uid>
+                    <type>1</type>
+                    <declaration>-QString gender</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6d6575be-79a7-4407-a888-5980e08aa875}</uid>
+                    <type>1</type>
+                    <declaration>-  int reputation</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{97c1a91c-cb17-4ff5-bb8d-75aeff3e6494}</uid>
+                    <type>1</type>
+                    <declaration>-QString role</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0c2c99e3-26ef-4253-b1c6-e208c0566561}</uid>
+                    <type>1</type>
+                    <declaration>-QDate memberSince</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{46aeb2bb-5f6b-4949-8253-6fde2abb8eea}</uid>
+                    <type>1</type>
+                    <declaration>-QDate lastLoggedIn</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7bb826cc-6a9a-49fd-a4f8-2a6a26ffc03a}</uid>
+                    <type>1</type>
+                    <declaration>-QString profilePicture</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f4fe1861-fa2c-468a-8f0c-223dde97ef3f}</uid>
+                    <type>1</type>
+                    <declaration>-bool status</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2d310c21-bafd-45f0-a1b0-a1d015aebf67}</uid>
+                    <type>2</type>
+                    <declaration>+User()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6a383726-02f5-41d2-b83e-60dc0919b837}</uid>
+                    <type>2</type>
+                    <declaration>+User(All User Attributes)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4c4a5c1b-b1bf-4077-a97d-c014f8beac16}</uid>
+                    <type>2</type>
+                    <declaration>+int getID()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e432b5e3-9e4d-4a8f-a399-645854a4e31f}</uid>
+                    <type>2</type>
+                    <declaration>+QString getFirstName()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{fe9f859f-213d-41be-a62c-a67ac8b01569}</uid>
+                    <type>2</type>
+                    <declaration>+QString getLastName()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a6ba88cb-7093-4ca5-87e7-22d0cc3c1d8a}</uid>
+                    <type>2</type>
+                    <declaration>+QString getUserName()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{05ffc19b-6b27-4959-a0c4-dac3e31d57b3}</uid>
+                    <type>2</type>
+                    <declaration>+QString getEmail()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{48281dcd-2240-4429-90c6-3842f67e87bf}</uid>
+                    <type>2</type>
+                    <declaration>+QString getPassword()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0d46ca5a-dbca-4db3-8072-c4c69ac631b0}</uid>
+                    <type>2</type>
+                    <declaration>+QString getRole()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{1a118be4-0838-48a4-a212-438f6f9f857e}</uid>
+                    <type>2</type>
+                    <declaration>+QString getGender()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{db093d38-6d82-4567-8cb8-3492c708a3bd}</uid>
+                    <type>2</type>
+                    <declaration>+int getReputation()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f7a6ac57-7984-46a8-806b-f6b811ad73c8}</uid>
+                    <type>2</type>
+                    <declaration>+QDate getMemberSince()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0e6189e9-995f-45c4-8ab1-c9f67dc07187}</uid>
+                    <type>2</type>
+                    <declaration>+QDate getLastLoggedIn()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d991da26-7b84-4e90-a420-0c92da0c4d71}</uid>
+                    <type>2</type>
+                    <declaration>+QString getProfilePicture()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f21a7de0-0c8d-4872-8966-c22371cf5adf}</uid>
+                    <type>2</type>
+                    <declaration>+bool getStatus()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{cddd72c3-dd67-403a-9fc3-26126e0077ff}</uid>
+                    <type>2</type>
+                    <declaration>+void setID(int)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{8d86d035-ec4e-40ad-b153-0d4f3d817f15}</uid>
+                    <type>2</type>
+                    <declaration>+void setUserName(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4c811e3c-92cf-4025-9181-ccf9a0046a3d}</uid>
+                    <type>2</type>
+                    <declaration>+void setFirstName(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{60f581b4-85a0-4e66-9fa2-4ba9f52395c1}</uid>
+                    <type>2</type>
+                    <declaration>+void setLastName(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2c083133-608c-46db-96b0-82d6ab83bc6b}</uid>
+                    <type>2</type>
+                    <declaration>+void setEmail(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7b73f182-d72b-47a8-b05b-4331c44546eb}</uid>
+                    <type>2</type>
+                    <declaration>+void setPassword(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{69522aed-4b40-4f1c-a5b1-3fb1183c8515}</uid>
+                    <type>2</type>
+                    <declaration>+void setRole(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d4634e0d-9eb2-4d11-8d2a-672bb8f8b027}</uid>
+                    <type>2</type>
+                    <declaration>+void setGender(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0bf77e1c-24d4-44d5-9c78-b515a160cade}</uid>
+                    <type>2</type>
+                    <declaration>+void setReputation(int)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6525a64c-b1f5-42a4-9911-ff57f3ed832b}</uid>
+                    <type>2</type>
+                    <declaration>+void setMemberSince(QDate)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{5f60b0e0-494c-47df-9af0-1eb926697bd0}</uid>
+                    <type>2</type>
+                    <declaration>+void setLastLoggedIn(QDate)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{09e17783-971f-4d69-a26a-6d72202f1cb5}</uid>
+                    <type>2</type>
+                    <declaration>+void setProfilePicture(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{114a3abb-a872-4760-bba2-c47e3a53a5bf}</uid>
+                    <type>2</type>
+                    <declaration>+void setStatus(bool)</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{6c8bb54e-8aff-40ec-9def-f34ca556d806}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{6c8bb54e-8aff-40ec-9def-f34ca556d806}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Bug</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;Entity&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{39f288cb-2bc1-46f9-9b14-dc7ef79974f5}</uid>
+                    <type>1</type>
+                    <declaration>-int ID</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{aeb20c73-bb6b-46d9-a810-92061cef06f9}</uid>
+                    <type>1</type>
+                    <declaration>-iQString title</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2366f65e-c0f9-45d3-a750-b67b65b87182}</uid>
+                    <type>1</type>
+                    <declaration>-iQString status</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{448f90f8-35f3-4e65-aef3-f71e0d90f177}</uid>
+                    <type>1</type>
+                    <declaration>-iQString application</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{467fc0a2-e5fb-4d9f-b8a4-2dc0f19384cd}</uid>
+                    <type>1</type>
+                    <declaration>-idouble version</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{86f0eb4b-042b-4279-b21c-d9353acc55e8}</uid>
+                    <type>1</type>
+                    <declaration>-iQString description</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{34011104-540c-459b-af5a-b7a1464710d2}</uid>
+                    <type>1</type>
+                    <declaration>-iQString platform</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f9d3c9a8-539f-453a-a745-5c9f3f506446}</uid>
+                    <type>1</type>
+                    <declaration>-iQString component</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2309e00b-6e7f-4f54-9baf-08a9e4ee4bbe}</uid>
+                    <type>1</type>
+                    <declaration>-iQString priority</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6036ded6-56ff-486f-a8eb-e07c16c7d9d3}</uid>
+                    <type>1</type>
+                    <declaration>-iQString severity</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{dfe905d2-ef0a-4479-b5c5-ad4280ce571d}</uid>
+                    <type>1</type>
+                    <declaration>-iQString walkthrough</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f9c75491-a011-4295-b71b-25b6175b20fe}</uid>
+                    <type>1</type>
+                    <declaration>-iQString assignedTo</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7d2c1d4b-e557-4988-920c-791e8f065abe}</uid>
+                    <type>1</type>
+                    <declaration>-iQString identifiedBy</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{95fa5263-e94c-4515-af9a-f65f9002af9c}</uid>
+                    <type>1</type>
+                    <declaration>-iQDateTime submitted</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a58af9bd-b35b-4b10-bad8-93c06501ded2}</uid>
+                    <type>2</type>
+                    <declaration>+Bug()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{65a1475a-b996-4d44-8d9a-9569e8b0d8a0}</uid>
+                    <type>2</type>
+                    <declaration>+Bug(All Bug Attributes)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{60db682c-13e3-4b45-858d-5f6ac3a1a271}</uid>
+                    <type>2</type>
+                    <declaration>+int getID()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{bd69c078-c0a5-4adf-aadf-b23eff8ada84}</uid>
+                    <type>2</type>
+                    <declaration>+QString getTitle()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6a6c613a-b004-4887-84e6-9f985123ee40}</uid>
+                    <type>2</type>
+                    <declaration>+QString getStatus()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4a060203-4939-4575-89ad-8e018ca37f55}</uid>
+                    <type>2</type>
+                    <declaration>+QString getApplication()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{bcc4cfd8-b07d-49be-891e-7cdf839c85bc}</uid>
+                    <type>2</type>
+                    <declaration>+double getVersion()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{1ccdeb67-fc28-4d89-b0a5-d511f94ae26c}</uid>
+                    <type>2</type>
+                    <declaration>+QString getDescription()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{97f0265c-30ba-4394-847b-a383b1581861}</uid>
+                    <type>2</type>
+                    <declaration>+QString getPlatform()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{c75481ba-f842-42fa-b261-a9906d10f54a}</uid>
+                    <type>2</type>
+                    <declaration>+QString getComponent()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{88583745-1302-45e2-9250-f253023ac8a4}</uid>
+                    <type>2</type>
+                    <declaration>+QString getPriority()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a4764723-deac-417a-8b65-4a2eced39a1d}</uid>
+                    <type>2</type>
+                    <declaration>+QString getSeverity()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4614e65a-f963-4c73-80df-3681b2f3522a}</uid>
+                    <type>2</type>
+                    <declaration>+QString getWalkthrough()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{41b734ee-28f5-4dcf-9328-a7b11ebd63f5}</uid>
+                    <type>2</type>
+                    <declaration>+QString getAssignedTo()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{85cf3fb3-2251-4fb5-87e2-a4a66b90d42b}</uid>
+                    <type>2</type>
+                    <declaration>+QString getIdentifiedBy()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{55440a10-3ffb-4a86-a7ff-e22e873e66a8}</uid>
+                    <type>2</type>
+                    <declaration>+QDateTime getSubmitted()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0b22e1fe-11af-4914-9398-1f5cfa7f9a38}</uid>
+                    <type>2</type>
+                    <declaration>+void setStatus(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f980eded-0332-4a0e-9a6a-d6b8db3a720f}</uid>
+                    <type>2</type>
+                    <declaration>+void setPriority(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d34f98ca-be5a-4b08-bcdb-c727d8425260}</uid>
+                    <type>2</type>
+                    <declaration>+void setSeverity(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{be6caeae-c197-470f-bd0d-eacc546982ed}</uid>
+                    <type>2</type>
+                    <declaration>+void setAssignedTo(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b384def5-3bbf-41bd-99e8-01a800647dfd}</uid>
+                    <type>2</type>
+                    <declaration>+void setHistory(QString)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{34b4e420-f4e8-4f2b-9023-7a8e22a83d85}</uid>
+                    <type>2</type>
+                    <declaration>+void setID(int)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{3f414505-a9ca-4266-9af0-c791d113b2de}</uid>
+                    <type>2</type>
+                    <declaration>+void setSubmitted(QDateTime)</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{9507c711-fe39-44db-9cb7-b043cee1c3c3}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{9507c711-fe39-44db-9cb7-b043cee1c3c3}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Login</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;boundary&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{fabcc1df-0011-4833-bc69-8f5f49498e90}</uid>
+                    <type>1</type>
+                    <declaration>-Ui::Login *ui</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{46379bcc-63fb-419a-baf9-e92bd5026ac7}</uid>
+                    <type>1</type>
+                    <declaration>-MainWindow *main</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6570ab91-b71d-4449-b2ee-35d8fb8a9630}</uid>
+                    <type>2</type>
+                    <declaration>-void reset()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{82142686-3f1a-4cf0-bfc8-01bac6c899a0}</uid>
+                    <type>1</type>
+                    <declaration>-ForgetPassword *forgetPassword</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{979533d5-5fe7-499d-9fe8-129ec1d737f7}</uid>
+                    <type>1</type>
+                    <declaration>-Register *newRegister</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{522dcb82-91ae-4ff1-b136-2a44803d620c}</uid>
+                    <type>2</type>
+                    <declaration>void on_logIn_loginPushButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a6c64608-1db9-4418-b075-e41c5e7f8181}</uid>
+                    <type>2</type>
+                    <declaration>-void registerPushButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{bc19c360-f33f-422b-9350-ea5953f9112b}</uid>
+                    <type>2</type>
+                    <declaration>-void forgetpwdPushButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{efe6f2f6-c29f-477e-9329-712d9c600bc9}</uid>
+                    <type>2</type>
+                    <declaration>-void pwdLineEdit_returnPressed()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{3ac79a1d-d797-4846-854c-bdbad2c9180e}</uid>
+                    <type>2</type>
+                    <declaration>+explicit Login(QWidget *parent = 0)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ddf8a02f-ef1a-478a-b40b-a4b7b6066dc2}</uid>
+                    <type>2</type>
+                    <declaration>+  ~Login()</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{27192ec6-2e23-45d1-9943-6401d8055835}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{27192ec6-2e23-45d1-9943-6401d8055835}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>ForgetPassword</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;boundary&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{58c956c5-dc06-4a02-806e-b0fbe6b78df3}</uid>
+                    <type>1</type>
+                    <declaration>-Ui::ForgetPassword *ui</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{23b2911e-ddba-40fd-a0da-58ca3809d33a}</uid>
+                    <type>2</type>
+                    <declaration>-void on_forgotpassword_SubmitButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a3f0efaf-91a7-4822-a2ac-19003311dd29}</uid>
+                    <type>2</type>
+                    <declaration>-void on_forgotpassword_CancelButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{19011d46-c056-4bf8-9aac-0365a9184648}</uid>
+                    <type>2</type>
+                    <declaration>+explicit ForgetPassword(QWidget *parent = 0)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{70afd581-0a31-4fa0-aefa-785d39d298cf}</uid>
+                    <type>2</type>
+                    <declaration>+ ~ForgetPassword()</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{cdbf9117-7a70-4237-85ff-8440442f921b}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{cdbf9117-7a70-4237-85ff-8440442f921b}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Register</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;boundary&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{704cc2eb-6eb0-434b-831f-1183fdb2829a}</uid>
+                    <type>1</type>
+                    <declaration>-Ui::Register *ui</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{94e73c57-7a48-41a6-832a-2d237344ae4b}</uid>
+                    <type>1</type>
+                    <declaration>-MainWindow *main</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{efb0e360-87b4-4830-9e2e-60ad4832bde8}</uid>
+                    <type>2</type>
+                    <declaration>-void guestPushButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{c6f24a14-4f3d-4f39-8e63-8332bd3efd7b}</uid>
+                    <type>2</type>
+                    <declaration>-void registerPushButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{25f0d3d0-645c-443a-9f8c-a3b8182c65f2}</uid>
+                    <type>2</type>
+                    <declaration>+explicit Register(QWidget *parent = 0)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b297fa10-4d9b-43b5-b292-bfa0990e4db5}</uid>
+                    <type>2</type>
+                    <declaration>+Register(QWidget* bool)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{20be7169-3aa8-43da-8efc-4956a22ff730}</uid>
+                    <type>2</type>
+                    <declaration>+~Register()</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{6effd81d-530f-4b12-81ab-f37a86354a7c}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{6effd81d-530f-4b12-81ab-f37a86354a7c}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>EditProfile</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;boundary&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{c142a327-1a8c-453a-b12b-b94cd47e6bb0}</uid>
+                    <type>1</type>
+                    <declaration>-Ui::Editprofile *ui</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{63ab34a1-987f-404d-8f67-379cc89302d7}</uid>
+                    <type>1</type>
+                    <declaration>-User* profile</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{23436166-71d6-4f0d-be31-a7f12ca4bba5}</uid>
+                    <type>1</type>
+                    <declaration>-User* user</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{161ec65f-cea0-4512-a86d-5136326b1394}</uid>
+                    <type>1</type>
+                    <declaration>-int bugID</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{48c660fc-83b6-4fdb-8bbf-b2af679ddf13}</uid>
+                    <type>1</type>
+                    <declaration>-ChangePassword *changePWD</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{1cf329b9-02fe-4795-b9f9-50cf3137307d}</uid>
+                    <type>2</type>
+                    <declaration>-void loadUser()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6ff7f2c2-12da-4b91-a94d-69e0e66206b1}</uid>
+                    <type>2</type>
+                    <declaration>-void checkAllowEdit()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{c35a03f7-f8d7-447b-aab4-0ebe918d0ca0}</uid>
+                    <type>2</type>
+                    <declaration>-QPixmap getProfilePicture()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{90e3bd15-81c6-4e65-bcfb-54ee3617d1e0}</uid>
+                    <type>2</type>
+                    <declaration>-void uploadProfilePicture()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ba00e8a8-bd21-44d0-ba8d-a8df503c0d4a}</uid>
+                    <type>2</type>
+                    <declaration>-void savePushButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b026ab2b-a872-47e2-a8f4-2a533ca6afa7}</uid>
+                    <type>2</type>
+                    <declaration>-void deletePushButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0526236a-1455-405d-af5e-9f27c1ad4d70}</uid>
+                    <type>2</type>
+                    <declaration>-void pwdPushButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e537121e-0a07-4bca-bf88-d31d38370045}</uid>
+                    <type>2</type>
+                    <declaration>-void changeProfileButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{5a712fe1-b3a9-45f4-95e2-0aa31bca8df9}</uid>
+                    <type>2</type>
+                    <declaration>+explicit Editprofile(QWidget *parent = 0)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0adac091-89e9-4f30-abf3-a64fafed88ad}</uid>
+                    <type>2</type>
+                    <declaration>+ Editprofile(QWidget*, User , User*)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6cb7d788-b1c6-4c2c-a152-5e6748a82c71}</uid>
+                    <type>2</type>
+                    <declaration>+ ~Editprofile()</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{40c2b573-8b4d-4e84-a8d4-4d133ed7a846}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{40c2b573-8b4d-4e84-a8d4-4d133ed7a846}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>ViewProfile</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;boundary&gt;</namespace>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{fea8cf44-4fa1-49fa-bf25-5848966dfdf3}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{fea8cf44-4fa1-49fa-bf25-5848966dfdf3}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>SearchUser</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;boundary&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{e57bfc01-51c9-4cdb-b104-20810f31b282}</uid>
+                    <type>1</type>
+                    <declaration>-Ui::searchUser *ui</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{3dea5c15-e0be-4995-ba05-5ad3104c0179}</uid>
+                    <type>1</type>
+                    <declaration>-User *user</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{cc0d03af-818f-420a-85e7-444de1a8bc20}</uid>
+                    <type>1</type>
+                    <declaration>-QList&lt;User*&gt; userList</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{351ccd20-d4e9-42e4-b57f-a785e40a27ce}</uid>
+                    <type>2</type>
+                    <declaration>-void populateTable(QList&lt;User *&gt;)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e5c86f28-58e1-4cdf-8cf3-2c6f70e0040b}</uid>
+                    <type>2</type>
+                    <declaration>-void load_menu()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ed2955fc-bc95-48f4-889e-e103f60f5a7b}</uid>
+                    <type>2</type>
+                    <declaration>-void dofilterChanged()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{95d45383-f844-49a6-989c-3294c4c243a6}</uid>
+                    <type>2</type>
+                    <declaration>-void searchBarLine_returnPressed()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{96b3fc1d-abe0-4649-9d48-120ea6f1340b}</uid>
+                    <type>2</type>
+                    <declaration>-void SearchButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0cc61adb-7a56-456a-93d6-8d2faaa8de50}</uid>
+                    <type>2</type>
+                    <declaration>-void StatusBox_currentTextChanged(const QString &amp;arg1)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7ec9ffa1-760d-4f1c-a444-b38355862f29}</uid>
+                    <type>2</type>
+                    <declaration>-void RoleBox_currentTextChanged(const QString&amp;)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a282be9e-fa2a-41b0-a77a-6d8dd37b30b9}</uid>
+                    <type>2</type>
+                    <declaration>-void Table_doubleClicked(const QModelIndex&amp;)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ea07c567-f5d9-4118-821f-25612402b770}</uid>
+                    <type>2</type>
+                    <declaration>+explicit searchUser(QWidget *parent = 0)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{31f4f3bb-40d4-4493-bfd1-3a1e92dcd21e}</uid>
+                    <type>2</type>
+                    <declaration>+ searchUser(QWidget*,User*)</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{868238d1-4ecc-4dbe-83e4-521df6159e0b}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{868238d1-4ecc-4dbe-83e4-521df6159e0b}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>ViewBug</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;boundary&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{425b02cc-bd98-4da5-b51f-f8cd6b4bcbcc}</uid>
+                    <type>1</type>
+                    <declaration>Ui::ViewBug *ui</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{140f7da7-2707-4fe9-81b5-071d727ac033}</uid>
+                    <type>1</type>
+                    <declaration>Bug *bug</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0b5605c9-484b-4ce6-a696-6a163c9ac0ed}</uid>
+                    <type>1</type>
+                    <declaration>-User *user</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{22db3f8e-6fd9-4251-a84f-2e760a4dba6c}</uid>
+                    <type>2</type>
+                    <declaration>-void checkRole()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{aead78a3-6d72-40e7-a2bd-7aec6ca1e66a}</uid>
+                    <type>2</type>
+                    <declaration>-void load_attachments()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{c74c70ab-c268-425d-94f9-a0ed00c512b5}</uid>
+                    <type>2</type>
+                    <declaration>-void ViewMoreButton_toggled(bool checked)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{08ba64ae-dd29-4348-a4ba-9c405672bac0}</uid>
+                    <type>2</type>
+                    <declaration>-void addToCCListButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{15394ced-1db0-4eac-8ba1-5f2587d99e15}</uid>
+                    <type>2</type>
+                    <declaration>-void clearCCListButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{87c27ec7-92d4-45d9-9c37-e4f61fd95c46}</uid>
+                    <type>2</type>
+                    <declaration>-void addCommentButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{804f2e71-65f0-4762-9f3a-7e41f2647df0}</uid>
+                    <type>2</type>
+                    <declaration>-void cancelButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{fca908d6-03c3-4b87-84de-079762618c50}</uid>
+                    <type>2</type>
+                    <declaration>-void saveButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{77d1c6a0-b674-4fac-9f4f-a1f89e131239}</uid>
+                    <type>2</type>
+                    <declaration>-void VerifyPatchButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{22d74616-a7ac-4760-bea7-d83fa7589859}</uid>
+                    <type>2</type>
+                    <declaration>-void UploadFileButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{cba0dfdd-1d1f-4ebe-b9bc-1db139aa6273}</uid>
+                    <type>2</type>
+                    <declaration>+explicit ViewBug(QWidget *parent = 0)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{185e7f53-4f8a-4837-b519-315a1aa9871e}</uid>
+                    <type>2</type>
+                    <declaration>+ViewBug(QWidget*, Bug*, UserS*)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{22135563-06e9-4156-a307-3c574705ef99}</uid>
+                    <type>2</type>
+                    <declaration>+~ViewBug()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{86150461-e125-4445-9cf7-02d36e32fd83}</uid>
+                    <type>2</type>
+                    <declaration>+void setBug()</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{79ff63e6-685b-455d-8ec0-fec30d582b75}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{79ff63e6-685b-455d-8ec0-fec30d582b75}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>AddBug</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;boundary&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{ffcddd21-4f1d-47dc-8597-8795b29ef674}</uid>
+                    <type>1</type>
+                    <declaration>-Ui::AddBug *ui</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{5431b1a0-5d3f-4d2f-ad8c-0e43d4f9bd5c}</uid>
+                    <type>1</type>
+                    <declaration>-User *user</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4eb2afb1-5e65-4666-928d-4d2fd9d2718a}</uid>
+                    <type>2</type>
+                    <declaration>-void loadLists()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{adb72679-e32d-414d-9b27-b2bbf1bcec6a}</uid>
+                    <type>2</type>
+                    <declaration>-void uploadFileButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{764eb50b-a3fa-4739-9821-5630cb761d7b}</uid>
+                    <type>2</type>
+                    <declaration>-void RemoveFileButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{58938d0c-da38-4fc6-b5d9-7b2557824ac2}</uid>
+                    <type>2</type>
+                    <declaration>-void cancelButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{07b74e4a-1ba2-4d25-9616-3c9ddbc904c6}</uid>
+                    <type>2</type>
+                    <declaration>-void on_addBug_SubmitButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e8f1cfeb-a9db-4653-9f78-d2137b2c6965}</uid>
+                    <type>2</type>
+                    <declaration>-void OptionsButton_toggled(bool checked)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{926f9902-3b69-4fe6-a7fa-c83a7e73d0ce}</uid>
+                    <type>2</type>
+                    <declaration>-void ApplicationQCombo_currentIndexChanged(const QString &amp;arg1)</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{2c02a223-2778-466d-9afb-d2f87ae0b207}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{2c02a223-2778-466d-9afb-d2f87ae0b207}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>MainWindow</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;boundary&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{f62e43a2-239f-4f23-bdee-28cb209c8387}</uid>
+                    <type>1</type>
+                    <declaration>-Ui::MainWindow *ui</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{912be277-7b61-49ad-a6f2-dfd1ffcd1e00}</uid>
+                    <type>1</type>
+                    <declaration>-User *user</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{31c1c24a-6641-40a4-a471-7d7168f60a97}</uid>
+                    <type>1</type>
+                    <declaration>- QList&lt;Bug*&gt; bugList</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{8dd24316-305b-434f-a44d-371705d508c6}</uid>
+                    <type>1</type>
+                    <declaration>- QWidget *login</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{51a7c2fc-c79c-473d-92e9-16cbb6c72891}</uid>
+                    <type>1</type>
+                    <declaration>- ViewBug *viewBug</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{98b57459-93d4-4f1d-bbd7-ff96cd37455c}</uid>
+                    <type>2</type>
+                    <declaration>-void loadMenus()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{1f0e809a-55e9-4fa3-ae5e-7d360a3d64d5}</uid>
+                    <type>2</type>
+                    <declaration>-void dofilterChanged()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{fe1eb494-deae-4e41-8187-1fcf14761c80}</uid>
+                    <type>2</type>
+                    <declaration>-void on_main_SearchButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ad2b6b6f-d088-4bbd-a0f8-c3ca16872f63}</uid>
+                    <type>2</type>
+                    <declaration>-void doViewBug()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{27efa9a9-785c-4541-9702-e645c45a7d32}</uid>
+                    <type>2</type>
+                    <declaration>-void doEditBug()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{27552025-f645-4601-9f63-5be10060b447}</uid>
+                    <type>2</type>
+                    <declaration>-void doNewUser()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b6af13a3-f092-41a8-8283-bda13f46255c}</uid>
+                    <type>2</type>
+                    <declaration>-void doReport()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{5377ae9a-c3ee-451a-af79-46f331c27e05}</uid>
+                    <type>2</type>
+                    <declaration>-void bugTable_doubleClicked(const QModelIndex &amp;index)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{65e50db1-01a1-4f58-aff5-08da8417747c}</uid>
+                    <type>2</type>
+                    <declaration>-void filterStatusBox_activated(const QString &amp;arg1)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4616efcb-5499-44d5-9edd-7c1b67921558}</uid>
+                    <type>2</type>
+                    <declaration>-void filterApplicationBox_activated(const QString &amp;arg1)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e7abdbc9-ab11-4463-888f-c50b45dd208f}</uid>
+                    <type>2</type>
+                    <declaration>-void addBugButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4fdc5ab7-1e83-4d81-ae24-0317839a494c}</uid>
+                    <type>2</type>
+                    <declaration>-void editProfileButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{22eb84ce-0ad4-4eca-8217-235e24930a92}</uid>
+                    <type>2</type>
+                    <declaration>-void searchUsers_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{1993f9e0-9867-48b9-88a6-6cfe6eec1d12}</uid>
+                    <type>2</type>
+                    <declaration>-void logout_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{4702fcfa-0ded-4e8b-870c-afcdd0d15b87}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{4702fcfa-0ded-4e8b-870c-afcdd0d15b87}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Report</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;boundary&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{4e92342f-0916-4497-8fe6-7c251d1326b8}</uid>
+                    <type>1</type>
+                    <declaration>-Ui::Report *ui</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ebd065c9-50ee-440b-b35f-6cb32e80c8b4}</uid>
+                    <type>1</type>
+                    <declaration>- int bugsResolved</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d59b6944-5b44-43b4-9e32-81752a2f2e1c}</uid>
+                    <type>1</type>
+                    <declaration>-int bugsReported</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b92252aa-bf43-4070-b1a8-33a658e0507e}</uid>
+                    <type>1</type>
+                    <declaration>-QList&lt;QPair&lt;QString, int&gt;&gt; bestDevelopers</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{8a7f9f1b-54bf-4252-b7c3-ce99334a5578}</uid>
+                    <type>1</type>
+                    <declaration>-QList&lt;QPair&lt;QString, int&gt;&gt; bestBugReporter</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d3ffb754-906b-469f-9c7d-d23a1605d4a9}</uid>
+                    <type>1</type>
+                    <declaration>-QList&lt;QPair&lt;QString, int&gt;&gt; bestReviewers</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{27e6fe43-747f-4044-9b39-e670c7c1b832}</uid>
+                    <type>2</type>
+                    <declaration>-void reset()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{1bebb2f1-e7f7-400b-8865-06bde8ea27ea}</uid>
+                    <type>2</type>
+                    <declaration>-void setText()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{9b8baf91-d155-481d-96fa-752768681e15}</uid>
+                    <type>2</type>
+                    <declaration>+void GenerateButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6f2fec84-bc6b-4924-8218-953952f37761}</uid>
+                    <type>2</type>
+                    <declaration>+explicit Report(QWidget*)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{80c6fe81-4df5-466a-8359-0681cdee26fe}</uid>
+                    <type>2</type>
+                    <declaration>+~Report()</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{cc951ff4-8004-4fc7-86a8-4ec41609cb25}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{cc951ff4-8004-4fc7-86a8-4ec41609cb25}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>ChangePassword</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>&lt;boundary&gt;</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{cff30a66-382e-48a6-a6a5-54f09fcab806}</uid>
+                    <type>1</type>
+                    <declaration>-Ui::ChangePassword *ui</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{5597885d-70a8-4985-a6e9-2183923c3bc2}</uid>
+                    <type>1</type>
+                    <declaration>-User *user</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{198aece7-78c1-42e3-b3bb-4ad5da7210e3}</uid>
+                    <type>2</type>
+                    <declaration>-void Password_savePushButton_clicked()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{dba73911-5526-405e-9780-4fc76b5f588f}</uid>
+                    <type>2</type>
+                    <declaration>+explicit ChangePassword(QWidget *parent = 0)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a0c35499-ae3e-4e07-9f15-0445028af575}</uid>
+                    <type>2</type>
+                    <declaration>+ChangePassword(QWidget*, User*)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2696d8f1-8fb5-48b9-b959-5b2b05debca7}</uid>
+                    <type>2</type>
+                    <declaration>+~ChangePassword()</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+          </qlist>
+         </handles>
+        </handles>
+       </children>
+      </MObject>
+     </base-MObject>
+    </MPackage>
+   </instance>
+  </root-package>
+ </project>
+</qmt>
